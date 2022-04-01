@@ -95,8 +95,19 @@ Card and Lemieux (2001) and Glitz and Wissmann (2021) offer an extension of the 
 
 Routine Biased Technological change is then a further extension of the model above (in fact it nests the Canonical model as its specific case). The key idea of this framework is an economic activity primarily consisting of tasks that can be divided between routine and non-routine and further between cognitive and non-cognitive. The technological change is assumed to substitute the routine tasks and strengthen position of non-routine ones. The framework is thus able to explain polarization patterns visible in the US labour market in 1990s (Autor, 2014). This framework is formally elaborated by Acemoglu and Autor (2011).
 
-\subsection{Variables construction}
-We follow proceedings of Katz and Murphy (1992) and Glitz and Wissmann (2021) while calculating variables for equation \ref{eqn:STBC_regression}. The skill-premium is calculated. Whereas the relative labour supply is obtained using efficiency units.
+\subsection{Variables Construction}
+We follow proceedings of Katz and Murphy (1992) and Glitz and Wissmann (2021) while calculating variables for equation \ref{eqn:STBC_regression}. For calculation of variables and statistics below we divide our data into groups defined by sex, experience level (6 categories) and highest attained ISCED education category.
+We compute an estimate of total hours worked in each group and each year as weeks worked times usual weekly hours and personal sample weight from the survey. In a similar fashion we compute average weekly wages for full-time workers for each of the groups defined above.
+
+We sum over all individuals in the group to get a total labour supply in a given group and year. Subsequently we compute relative share of each group in total labour supply in a given year and use this measure to calculate a vector of average employment shares for each group over all available years in the sample. We use this fixed weights together with the groups' average wages matrix to calculate time series of relative wages by groups. An average of this time series through time can be interpreted as estimate of the average relative wage of a given group. \footnote{Each group's average weekly wages and weighted by the fixed weights, creating a time series of indices for each of the sample by which we then weight wages for all groups in a given year.} % this should be N' W
+% Efficiency units 
+The relative labour supply and other descriptive statistics below are obtained using efficiency units. Efficiency units are essentially the labour supplies (hours worked) for each education-age-gender-year group multiplied by the group's average relative wage estimate defined above. Result of this operation is then labour supply for each group in each year. We construct more aggregated measured of LS by summing over these groups in each skill group (education category, high and low).
+% Labour Supply
+We calculate the final supply of high vs. low skill labour supply (more precisely of tertiary vs. non-tertiary education) as a sum of respective cells for tertiary and lower than tertiary education groups.
+% Wage premiums = weighted average of education-age-gender-year group's wages
+To get the skill wage premium, we use the average wages for each education-age-gender-year group, mentioned above. We calculate the high/low skill group's composition-adjusted wage as a weighted average of the groups' wages with weights defined as each group's average share of the respective skill group's (high/low) total labour supply over all observed years (i.e. we give the highest weight to the wages which provided the highest share of labour supply in the given skill group).
+% check this, primary source KM Table II!
+In line with the equation \ref{eqn:STBC_regression}, we than use a logarithm of in the regressions below....
 
 % TODO: add estimation info such as efficiency unies, etc.; see Acemoglu and also GLitz and Wissmann. Expand massively, also add much more description to the graphs.
 
@@ -107,11 +118,14 @@ The results below refer to these regional blocks, results for individual countri
 
 % Table 1 and Table 2 - wage and LS changes tables with commentary
 % TODO: compare to the US case (KM 92)
-% TODO: change 2010/2019 to 2011/2019 to be consisent in the time period
-Table \ref{real_wage_changes_agg} shows changes in real wages for two time periods - 2005$/$2009 and 2010$/$2019 for males and females, five education categories and six experience groups. First of all, we note quite strong real wage growth for the highest education category (tertiary education or higher) in all regions apart from the Central Europe where we find small decline between 2010 and 2019. In Baltic and Balkan case is notable growth across all categories. The situation in the Central Europe is somewhat different at least in the later periods - we can see decline in most education categories apart from the secondary education. Real wages also declined for the most experienced workers ($>$ 45).
-In a similar fashion, table \ref{labour_supply_changes_agg} shows changes in relative labour supply, concretely we depict log changes in each group's share of total labor supply. We measure the labour supply in efficiency units. The results show steady rise of females in the labour supply and also rise of the highest education categories across the regional groups. Among experience categories we see rising labour supply for the higher experience groups and declines in case of workers with less than five years of working experience, probably a sign of population ageing.
+Table \ref{real_wage_changes_agg} shows log changes in real wage for several groups of full-time workers for two time periods - 2007$/$2010 and 2011$/$2019. We calculate the real wages by deflating nominal wages in each period by the country's Harmonised index of consumer prices obtained from Eurostat. Subsequently we calculate the changes for males and females, five education categories and six experience groups. First of all, we note quite strong real wage growth for the highest education category (tertiary education or higher) in all regions apart from the Central Europe where we find small decline between 2011 and 2019. In Baltic and Balkan case is notable growth across all categories. The situation in the Central Europe is somewhat different at least in the later periods - we can see decline in both highest and lowest education category contrasting with wage increases across secondary education. Real wages also declined for the most experienced workers in this region ($>$ 45).\footnote{Note however that the results for primary education category is driven by relatively low number of observations and only two countries - Poland and Slovakia}.
+In a similar fashion, table \ref{labour_supply_changes_agg} shows changes in relative labour supply, concretely we depict log changes in each group's share of total labor supply measured in efficiency units. The results show steady rise of female share in the labour supply and also rise of the highest education categories across the regional groups. Among the experience categories we see rising labour supply for the higher experience groups and declines in case of workers with less than five years of working experience, probably a sign of population ageing.
+
+% Figure 11 and 12 - here 
+In Figure \ref{low_deciles_vs_min_w} we can see a development of the log minimal wage against the 1st percentile and decile of the wage distribution. We can see that the minimal wage closely copies the first decile of our sample. We can also note a diverging trend for Romania and Bulgaria after 2015. Figure \ref{high_deciles_vs_meam_w} than portrays a similar picture for higher segments of the distribution and log of mean wage for given region for Eurostat (EU-SES).
 
 % Figure 1 - TODO: any interpretation of those numbers
+% TODO: 50/10 seems to be significantly more volatile than 90/50 
 To sum-up general development of labour market inequality, Figure \ref{agg_wage_gaps_CEE} portrays 50/10 and 90/50 wage gap (ratio of percentiles of an annual log wage distribution) development for full-time workers in the three regions defined above.
 Figure \ref{agg_wage_gaps_CEE} shows that the pay gaps developed differently in the three regions, despite being generally different to the US data as found for example in (Mishel, Shierholz and Schmitt, 2013). In case of the central European countries there is a tendency for relatively long-term and monotonic decrease for the 90/50 wage gap, a finding contrary to the US and Western Europe evidence as well as the hypothesis of job polarization and "hollowing-out" of the middle class. We can also note mostly decreasing tendency of the 50/10 ratio a movement more in line with the US evidence as the least paid jobs seem to be catching up with the median. Similar tendency can be observed for the Baltic countries with a notable exception of steep rise of wage inequality after the crisis in 2008, this phenomena is visible yet less pronounced in the Visegrad countries as well. The Balkan countries on the other hand experience rather flat 90/50 ratio after 2012 and reversed trend in the lowest 50/10 in recent years. On the other hand, there is no negative reaction to the 2008 crisis with the ratios continuing to decline around the year 2010.
 In general we can see strengthening of the lower part of the income distribution in Central Europe, to lesser degree in the other two regions. The development also contrasts with German experience where we can see a general upward trend for both wage gaps (90/50 and 50/10) at least until 2015 (Biewen and Sturm, 2021).
@@ -119,7 +133,7 @@ In general we can see strengthening of the lower part of the income distribution
 
 %Figure 2 - look at Acemoglu, 2012 and so on I consider extending the graph description if necessary.
 % TODO magnitudes, compare with Acemoglu
-In Figure \ref{agg_wage_changes_percentiles_11_19} we can find changes in log wages of full-time workers relative to the median between 2007 and 2019. Unlike the U-shaped curve characteristic of wage polarization visible in the US (Acemoglu and Autor, 2011) we can instead observe a monotonic behaviour for the Visegrad counties with a clear tendency for decline of the highest percentiles relative to median. Similar, yet less pronounced picture is visible for the Baltics whereas the same plot for Romania and Bulgaria shows rather contrasting picture with declining lowest percentiles and tendency for an increase for two highest deciles.
+In Figure \ref{agg_wage_changes_percentiles_11_19} we can find changes in log wages percentiles of full-time workers relative to the median between 2011 and 2019. Unlike the U-shaped curve characteristic of wage polarization visible in the similar plot for the US (Acemoglu and Autor, 2011) we can instead observe a monotonic behaviour for the Visegrad counties with a clear tendency for decline of the highest percentiles relative to median. Similar, yet less pronounced picture is visible for the Baltics whereas the same plot for Romania and Bulgaria shows rather contrasting picture with declining lowest percentiles and tendency for an increase for two highest deciles.
 \footnote{Note that Figure \ref{agg_wage_changes_percentiles} shows that for 2007-2019 period the graphs for Baltic and Balkan countries, in contrast, show declining tendency from lowest percentiles and rather flat behaviour afterwards.} In general, the graphs confirm the conclusions from figure \ref{wage_gaps_CEE}. In contrast to the Western evidence we do not find relative rise of the highest incomes even though the outcomes differs among regions.
 
 
@@ -138,6 +152,7 @@ The differences can perhaps be seen in sectoral specialization as also documente
 % some sources: https://www.oecd.org/economy/surveys/bulgaria-2021-OECD-economic-survey-overview.pdf
 %https://www.oecd-ilibrary.org/sites/bf4a7892-en/index.html?itemId=/content/component/bf4a7892-en#chapter-d1e1343
 % overview: https://ec.europa.eu/eurostat/web/products-eurostat-news/-/DDN-20190917-1
+%Gini: https://data.worldbank.org/indicator/SI.POV.GINI?end=2018&locations=BG-CZ-RO-HU&start=2002&fbclid=IwAR1PFRKBUVf-Gmq4NdR1r4bjuQrNCrfQXIst_SQcG97p1dcpmO7WNy5heag
 Our results so far, despite bringing interesting view of the economies, do not tell us any decisive conclusion about the SBTC hypothesis. We can only tell that our results, especially those for the Central Europe (which are actually inverse to the US scenario), differ from those of the West, they however still could be in line with either SBTC or RBTC theory, given that either high skill labour supply growth is high enough or the countries are recipients of routine jobs from abroad thanks to globalization.
 
 
@@ -145,13 +160,18 @@ Our results so far, despite bringing interesting view of the economies, do not t
 % Panel Regression
 % Main variables
 In the next part we get to the crucial part of the canonical model doctrine - (presumably) negative relationship between relative labour supply and relative wages. As can be seen in the plots \ref{agg_labour_supplies} and \ref{agg_high_low_log_wage_gap} a rising tendency in relative high-skill supply rise across CEE on one hand (as high skill category we define individuals with the highest ISCED education level attained greater or equal to 5). On the other hand decline in university/college wage premium can be seen in case of the Central Europe, however the Baltics show rather volatile development with pronounced increase in the premium after 2008 and downward trend afterward. Balkan countries experience a sharp rise in the premium after 2015. These results thus confirm some of the conclusions from the descriptive part. 
-The negative correlation between the variables - expected by the theory seems to be evident for the Visegrad but not outside of it. We now take a look at the panel regression for years 2005-2019 to check if this relationship is statistically significant.\\
+The negative correlation between the variables - expected by the theory seems to be evident for the Visegrad but not outside of it. If we, following Acemoglu (2012), de-trend the series as can be visible in Figure \ref{agg_km_vars_detrended} this negative relationship disappears - correlation for all regions as well as countries (Fig \ref{km_vars_detrended} in the Appendix) is actually positive. This is a contrasting result to the US in Acemoglu (2012). The only difference are actually Romania and Bulgaria.
+We now take a look at the panel regression for years 2005-2019 to further check if this relationship is statistically significant.\\
 % TODO - maybe comment on separate countries???
 %%%% Regression results
-In tables \ref{RE_models_comparison} and \ref{FE_models_comparison}  we see the regression results of several regression specifications coming from the basic regression design proposed by Katz and Murphy (1992) in the form of equation \ref{eqn:STBC_regression}, we also add several other explanatory variables inspired by research on determinants of labour market inequality. This regression equation has been used extensively, in studies predominantly concentrated on developed economies in last decades (Havranek et al., 2021) and thus is a good basis for comparison. As suggested by Farber (2018), we added union density for each year as a measure of labour market conditions.\\
-The H/L parameter in tables \ref{RE_models_comparison} and \ref{FE_models_comparison} can be interpreted as an elasticity of substitution between high and low skilled workers. The time trend parameter is interpreted as an annual change in relative high skill demand caused by technological change.
+Following key works in the field such as Katz and Murphy (1992) or Acemoglu (2012), we perform \ref{eqn:STBC_regression} separately for each country - the results confirm the conclusions of the detrended series analysis above - the estimates are insignificant with the exception of Romania and Bulgaria that have significantly negative coefficients with magnitude suggesting higher elasticity than in the US case (-0.27 and -0.34 respectively)  \footnote{We have also done this exercise for the regional groups - elasticities are again insignificant except for the Balkans}. % TODO present the results, maybe put here some comment from Havranek
+However, as the regressions above work with short time series we decided to utilize panel regression.
+In tabls \ref{panel_regression_comparison} we see the regression results of several regression specifications coming from the basic regression design proposed by Katz and Murphy (1992) in the form of equation \ref{eqn:STBC_regression}, we also add  other explanatory variables inspired by research on determinants of labour market inequality. This regression equation has been used extensively, in studies predominantly concentrated on developed economies in last decades (Havranek et al., 2021) and thus is a good basis for comparison. As suggested by Farber (2018), we added union density for each year as a measure of labour market conditions, we also added average minimum wage in each of the countries.\\
+The H/L parameter in table \ref{panel_regression_comparison} can be interpreted as an elasticity of substitution between high and low skilled workers and is therefore of a primary interest . The Random effect model also contains time trend parameter is interpreted as an annual change in relative high skill demand caused by technological change.
 
-Overall, the regression results suggest significantly higher elasticity of substitution in the CEE compared to the US and German case (Acemoglu, 2012; Glitz and Wissmann, 2021) and at the same time significantly lower pace of technological change. However, the in many model specifications the the coefficients are insignificant or even positive. This results, contrast with expectations given from the theory -that implies non-negativity of the estimates, as well as many empirical studies (Katz and Murphy has ... for the US), yet seem to be in line with tendency of the literature to present upward biased estimates (Havranek et al., 2021).
+
+The results show that the relative supply coefficient is negative and significant and between (-0.2 and -0.1) this implies elasticity of substitution around 5 or 10 \footnote{We also performed Hausmann test in order to choose prefered model variant, with p-value 0.04551 (for the model including Union density variable) we reject the null hypothesis of RE model.}. The key result is thus that according to these results high and low skill labour are gross substitutes. As Havranek (2020) notes, this implies that high and low skilled workers are relatively interchangeable and crucially, increase in supply of high skill workers decreases demand for the low-skilled ones. The results also suggest significantly higher elasticity of substitution in the CEE compared to the US and German case (Acemoglu, 2012; Glitz and Wissmann, 2021) and at the same time significantly lower pace of technological change. This result could be in line with findings of previous literature such as (Arend and Grabowski, 2019 and Hardy et al., 2018) - who notes significant educational upgrading in the region together with high demand for routine (even though cognitive) jobs in result of CEE being and offshoring destination. This may be the creating excessive supply high-skilled population that is subsequently being pushed into less high-skilled occupations - resulting in a higher substitutibility.
+%However, the in many model specifications the the coefficients are insignificant or even positive. This results, contrast with expectations given from the theory -that implies non-negativity of the estimates, as well as many empirical studies (Katz and Murphy has ... for the US), yet seem to be in line with tendency of the literature to present upward biased estimates (Havranek et al., 2021).
 
 Also note that technological change seems to have negative sign despite a miniscule magnitude, this would imply that technological change has an equalizing effect (decrease in skill premium) in CEE.
 
@@ -293,16 +313,32 @@ Overall, we can identify a marked difference of the observed basic labour market
 
 \begin{figure}[!htbp]%
     \centering
+    {\includegraphics[scale=0.6]{agg_km_vars_detrended.png} }
+    \caption{Detrended skill wage premium against relative labour supply}
+    \label{agg_km_vars_detrended}
+\end{figure}
+
+
+
+\begin{figure}[!htbp]%
+    \centering
     {\includegraphics[scale=0.6]{agg_min_wages.png} }
-    \caption{Mininal Wages against the lowest percentiles}
-    \label{agg_labour_supplies}
+    \caption{Minimal Wages against the lowest percentiles}
+    \label{low_deciles_vs_min_w}
+\end{figure}
+
+\begin{figure}[!htbp]%
+    \centering
+    {\includegraphics[scale=0.6]{agg_high_deciles_against_mean.png} }
+    \caption{Mean Wages against the highest percentiles}
+    \label{high_deciles_vs_meam_w}
 \end{figure}
 
 
 % Aggregate - Table 1
 \begin{table}[!htbp]
 \centering 
-\caption{Changes of real wages for different groups of countries}
+\caption{Changes of real wages for different groups of countries. The table depicts a log changes in real weekly wages of full-time workers for specified periods. The wages are defined using the sex-education-experience groups defined above, the aggregate categories displayed are then weighted average of relevant groups using average employment shares of given group over the entire sample period as weight}
 \label{real_wage_changes_agg}
 \begin{center}
 \resizebox{\textwidth}{!}{
@@ -310,28 +346,28 @@ Overall, we can identify a marked difference of the observed basic labour market
 
 \begin{tabular}{lrrrrrr}
 \toprule
-{} &     Balkans &  Balkans    &   Visegrad &   Visegrad &     Baltic &     Baltic \\
-{} &  2009/2005 &  2019/2010 &  2009/2005 &  2019/2010 &  2009/2005 &  2019/2010 \\
+{} &     Ro+Bu &     Ro+Bu &   Central Europe &   Central Europe &     Baltic &     Baltic \\
+{} &  2010/2007 &  2019/2011 &  2010/2007 &  2019/2011 &  2010/2007 &  2019/2011 \\
 %country\_group &     balkan &     balkan &   visegrad &   visegrad &     baltic &     baltic \\
 Groups                                &            &            &            &            &            &            \\
 \midrule
-%(upper) secondary education           &  20.263140 &  54.992832 &  23.461064 &  15.630776 &  43.901241 &  28.640950 \\
-$<$5                                    &  25.323163 &  59.505904 &  15.684244 &   9.226572 &  38.309570 &  28.665066 \\
-5-15                                  &  20.295392 &  57.856670 &  17.057098 &  -1.367501 &  48.614583 &  22.479682 \\
-15-25                                 &  21.301315 &  59.256011 &  18.111133 &   6.690356 &  41.046668 &  29.510076 \\
-25-35                                 &  20.230349 &  48.336472 &  15.610193 &   2.507497 &  41.703779 &  24.169258 \\
-35-45                                 &  11.337536 &  49.940149 &  22.950048 &   1.056531 &  35.189742 &  21.076778 \\
-%5-15                                  &  20.295392 &  57.856670 &  17.057098 &  -1.367501 &  48.614583 &  22.479682 \\
-%$<$5                                    &  25.323163 &  59.505904 &  15.684244 &   9.226572 &  38.309570 &  28.665066 \\
-$>$45                                   & -53.743556 &  82.751174 &  14.839877 &  -3.832097 &  28.458150 &  23.725714 \\
-Female                                &  20.321871 &  57.895265 &  14.704730 &   4.219398 &  40.008478 &  24.543361 \\
-Male                                  &  19.271393 &  53.959655 &  19.109739 &   2.874936 &  43.834768 &  26.105622 \\
-primary education                     &  11.352230 &  63.639526 &  31.982316 & -39.901767 &  73.972763 &  64.155128 \\
-lower secondary education             &  11.225514 &  50.400986 &  22.019281 &  17.807996 &  39.367611 &  24.697806 \\
-(upper) secondary education           &  20.263140 &  54.992832 &  23.461064 &  15.630776 &  43.901241 &  28.640950 \\
-post-secondary non tertiary education &  18.403028 &  66.974129 & -24.615833 &  -2.338268 &  39.131979 &  24.711977 \\
-%primary education                     &  11.352230 &  63.639526 &  31.982316 & -39.901767 &  73.972763 &  64.155128 \\
-tertiary education                    &  20.683067 &  56.160600 &  14.587462 &  -4.171581 &  42.047326 &  24.209725 \\
+%(upper) secondary education           &   9.345806 &  59.931305 &  11.642997 &  13.936923 &  10.444225 &  35.929474 \\
+$<$5                                    &  14.797624 &  65.137344 &   7.185108 &   7.891582 &  -2.950337 &  36.497808 \\
+5-15                                  &   7.971447 &  63.154173 &   9.118209 &  -0.975471 &  13.526565 &  31.962220 \\
+15-25                                 &   8.862724 &  66.525961 &   9.272641 &   4.759290 &  16.791721 &  37.971652 \\
+25-35                                 &   8.086467 &  58.721456 &   9.602545 &   0.797051 &  20.272556 &  33.163872 \\
+35-45                                 &   4.723792 &  61.367711 &   9.641290 &   0.610153 &  18.121019 &  28.695666 \\
+%5-15                                  &   7.971447 &  63.154173 &   9.118209 &  -0.975471 &  13.526565 &  31.962220 \\
+%$<$5                                    &  14.797624 &  65.137344 &   7.185108 &   7.891582 &  -2.950337 &  36.497808 \\
+$>$45                                   & -76.867792 &  86.427481 &  22.566759 &  -1.274856 &  21.462457 &  33.994379 \\
+Female                                &   8.142511 &  66.488347 &   7.900273 &   2.301673 &  16.894605 &  32.871068 \\
+Male                                  &   8.070425 &  60.904215 &   9.890782 &   2.572075 &  10.693629 &  35.108801 \\
+primary education                     &   4.736836 &  69.037100 &   1.191744 & -50.229431 &  18.815427 &  75.794649 \\
+lower secondary education             &   1.236062 &  55.677731 &  13.769496 &  16.239395 &   6.002626 &  27.930662 \\
+(upper) secondary education           &   9.345806 &  59.931305 &  11.642997 &  13.936923 &  10.444225 &  35.929474 \\
+post-secondary non tertiary education &   6.265056 &  77.476501 &   9.534267 &   2.034679 &  16.617963 &  31.882166 \\
+%primary education                     &   4.736836 &  69.037100 &   1.191744 & -50.229431 &  18.815427 &  75.794649 \\
+tertiary education                    &   8.404465 &  65.094797 &   7.724367 &  -4.659190 &  14.562024 &  34.033161 \\
 \bottomrule
 \end{tabular}
 
@@ -345,7 +381,7 @@ tertiary education                    &  20.683067 &  56.160600 &  14.587462 &  
 % TODO - rows ordering
 \begin{table}[!htbp]
 \centering 
-\caption{Changes of labour supply for different groups of countries}
+\caption{Changes of labour supply for different groups of countries. The table presents log changes in the share of total labour supply provided by given group in the specified period. The labour supply is measured in the efficiency units.}
 \label{labour_supply_changes_agg}
 \begin{center}
 \resizebox{\textwidth}{!}{
@@ -353,28 +389,27 @@ tertiary education                    &  20.683067 &  56.160600 &  14.587462 &  
 
 \begin{tabular}{lrrrrrr}
 \toprule
-{} &  2009/2005 &  2019/2010 &   2009/2005 &  2019/2010 &  2009/2005 &  2019/2010 \\
-country\_group &     Balkans &     Balkans &    Visegrad &   Visegrad &     Baltics &     Baltics \\
-Groups                                &            &            &             &            &            &            \\
+{} &  2010/2007 &  2019/2011 &  2010/2007 &  2019/2011 &   2010/2007 &  2019/2011 \\
+country\_group &     balkan &     balkan &   visegrad &   visegrad &      baltic &     baltic \\
+Groups                                &            &            &            &            &             &            \\
 \midrule
-%(upper) secondary education           &   2.110372 &  -4.361227 &   -5.819822 &  -4.122690 &   3.347802 & -18.456715 \\
-$<$5                                    &  -3.433519 & -39.546120 &    9.262372 & -45.130578 &  21.090424 & -23.837731 \\
-5-15                                  &  -6.547711 &  -4.770492 &   -0.547192 &  -0.843152 &  -2.955108 &  23.636588 \\
-15-25                                 &  10.602646 &  -6.134689 &   -9.395718 &   6.817362 & -19.691495 & -23.785056 \\
-25-35                                 &  -9.070522 &  12.484648 &   -1.339045 &  -4.590497 &   3.967492 & -12.583702 \\
-35-45                                 &  17.266869 &  19.834465 &   22.249188 &  33.775628 &  24.404248 &  39.363016 \\
-%5-15                                  &  -6.547711 &  -4.770492 &   -0.547192 &  -0.843152 &  -2.955108 &  23.636588 \\
-%$<$5                                    &  -3.433519 & -39.546120 &    9.262372 & -45.130578 &  21.090424 & -23.837731 \\
-$>$45                                   & -38.173439 &  38.797089 &    8.211623 &  79.904144 &  41.742204 &  52.400496 \\
-Female                                &   0.458509 &   0.374467 &    4.038640 &   2.424546 &   7.947242 &  -6.195163 \\
-Male                                  &  -0.279532 &  -0.232971 &   -2.497064 &  -1.595007 &  -5.788782 &   4.800329 \\
-primary education                     & -42.501683 & -25.711052 &  -27.617378 & -53.542001 & -29.548791 & -48.580389 \\
-lower secondary education             &  -6.879898 & -44.157671 &   -9.130062 &   8.187183 &  13.842196 & -37.511070 \\
-(upper) secondary education           &   2.110372 &  -4.361227 &   -5.819822 &  -4.122690 &   3.347802 & -18.456715 \\
-post-secondary non tertiary education &   0.837474 &  -6.050149 &   37.310142 & -35.512221 & -39.312751 &  13.076369 \\
-%pre-primary education                 &  58.772461 &       -inf & -117.106968 &       -inf &        inf &       -inf \\
-%primary education                     & -42.501683 & -25.711052 &  -27.617378 & -53.542001 & -29.548791 & -48.580389 \\
-tertiary education                    &   1.553710 &  22.916981 &   11.065959 &  10.719597 &   8.956581 &  11.550208 \\
+%(upper) secondary education           &  -0.856678 &  -1.930573 &  -5.771289 &  -2.719726 &  -12.278409 & -17.813729 \\
+$<$5                                    &  -2.383018 & -31.097151 &   2.249316 & -43.438851 &   -4.427445 & -16.999040 \\
+15-25                                 &   6.985925 &  -3.933818 &  -7.453282 &   8.174225 &   -8.145433 & -18.880740 \\
+25-35                                 & -10.210762 &   8.558053 &  -1.978402 &  -4.703112 &    4.217927 & -15.607869 \\
+35-45                                 &  25.112974 &  12.351141 &  21.275877 &  32.029868 &   10.256839 &  38.920874 \\
+%5-15                                  &  -4.671684 &  -3.833148 &   0.796531 &  -2.034299 &    5.413153 &  17.826651 \\
+%$<$5                                    &  -2.383018 & -31.097151 &   2.249316 & -43.438851 &   -4.427445 & -16.999040 \\
+$>$45                                   & -36.640996 &  59.656172 &  14.065841 &  71.537131 &  -19.632433 &  48.323612 \\
+Female                                &   1.296522 &  -1.930132 &   4.091550 &   2.007874 &    8.494020 &  -4.176115 \\
+Male                                  &  -0.795805 &   1.223618 &  -2.551984 &  -1.325431 &   -6.453240 &   3.177369 \\
+primary education                     & -50.254843 & -14.738936 & -20.863042 & -50.979049 &  -12.331598 & -32.205389 \\
+lower secondary education             &  -7.603790 & -26.757482 &  -1.851176 &  24.034607 &  -12.826862 & -32.896778 \\
+(upper) secondary education           &  -0.856678 &  -1.930573 &  -5.771289 &  -2.719726 &  -12.278409 & -17.813729 \\
+post-secondary non tertiary education &  -1.729285 &   5.109752 &   0.797851 & -35.876316 &  -30.872638 &  12.805771 \\
+%pre-primary education                 &  59.345873 &       -inf & -91.783450 &       -inf & -117.468738 &       -inf \\
+%primary education                     & -50.254843 & -14.738936 & -20.863042 & -50.979049 &  -12.331598 & -32.205389 \\
+tertiary education                    &   8.452129 &  10.272401 &  11.712725 &   7.441955 &   20.472786 &  10.584279 \\
 \bottomrule
 \end{tabular}
 
@@ -386,38 +421,62 @@ tertiary education                    &   1.553710 &  22.916981 &   11.065959 & 
 
 \begin{table}[!htbp]
 \centering 
-\caption{Random Effect model comparison - regional aggregates}
-\label{random_effect_aggregates}
+\caption{Panel Regression Comparison - clustered standard errors reported}
+\label{panel_regression_comparison}
 \begin{center}
 \resizebox{\textwidth}{!}{
-\begin{tabular}{lcc}
+
+
+
+\begin{tabular}{lccccccc}
 \toprule
-                                  &  \textbf{norm}  &   \textbf{sqr}   \\
+                                 & \textbf{FE - entity effects} & \textbf{FE- time effects inc.} & \textbf{FE - UD} &    \textbf{RE}    & \textbf{RE - entity} &  \textbf{RE - UD} & \textbf{RE - UD2}  \\
 \midrule
-\textbf{Dep. Variable}            &     logW\_HL    &     logW\_HL     \\
-\textbf{Estimator}                &  RandomEffects  &  RandomEffects   \\
-\textbf{No. Observations}         &        43       &        43        \\
-\textbf{Cov. Est.}                &    Unadjusted   &    Unadjusted    \\
-\textbf{R-squared}                &      0.6454     &      0.6458      \\
-\textbf{R-Squared (Within)}       &      0.1167     &      0.1176      \\
-\textbf{R-Squared (Between)}      &      1.0000     &      1.0000      \\
-\textbf{R-Squared (Overall)}      &      0.6454     &      0.6458      \\
-\textbf{F-statistic}              &      17.291     &      13.490      \\
-\textbf{P-value (F-stat)}         &      0.0000     &      0.0000      \\
-\textbf{========================} & =============== & ===============  \\
-\textbf{log(H\_L)}                &     -0.0578     &     -0.0494      \\
-\textbf{ }                        &    (-0.8776)    &    (-0.6231)     \\
-\textbf{trend}                    &     -0.0002     &     -0.2994      \\
-\textbf{ }                        &    (-0.0796)    &    (-0.1944)     \\
-\textbf{Baltic}    &      0.0120     &      0.0054      \\
-\textbf{ }                        &     (0.2352)    &     (0.0878)     \\
-\textbf{Visegrad}  &      0.0773     &      0.0749      \\
-\textbf{ }                        &     (3.7602)    &     (3.1038)     \\
-\textbf{const}                    &      0.4542     &     -297.71      \\
-\textbf{ }                        &     (6.0725)    &    (-0.1940)     \\
-\textbf{trend\_sq}                &                 &    7.425e-05     \\
+\textbf{Dep. Variable}           &           logW\_HL           &            logW\_HL            &     logW\_HL     &      logW\_HL     &       logW\_HL       &      logW\_HL     &      logW\_HL      \\
+\textbf{Estimator}               &           PanelOLS           &            PanelOLS            &     PanelOLS     &   RandomEffects   &    RandomEffects     &   RandomEffects   &   RandomEffects    \\
+\textbf{No. Observations}        &             144              &              144               &       144        &        144        &         144          &        144        &        144         \\
+\textbf{Cov. Est.}               &          Clustered           &           Clustered            &    Clustered     &     Clustered     &      Clustered       &     Clustered     &     Clustered      \\
+\textbf{R-squared}               &            0.3370            &             0.0836             &      0.1608      &       0.3150      &        0.6952        &       0.3689      &       0.7174       \\
+\textbf{R-Squared (Within)}      &            0.3370            &             0.3365             &      0.3614      &       0.3366      &        0.3416        &       0.3838      &       0.3897       \\
+\textbf{R-Squared (Between)}     &            0.3271            &             0.3375             &      0.8437      &      -0.3251      &        1.0000        &      -0.1149      &       1.0000       \\
+\textbf{R-Squared (Overall)}     &            0.3262            &             0.3362             &      0.8307      &      -0.0177      &        0.6952        &       0.1183      &       0.7174       \\
+\textbf{F-statistic}             &            67.617            &             10.861             &      7.4737      &       32.422      &        27.366        &       20.314      &       25.392       \\
+\textbf{P-value (F-stat)}        &            0.0000            &             0.0013             &      0.0001      &       0.0000      &        0.0000        &       0.0000      &       0.0000       \\
+\textbf{=====================}   &         ===========          &          ===========           &   ===========    &  ===============  &   ===============    &  ===============  &  ===============   \\
+\textbf{log(H\_L)}               &           -0.2198            &            -0.2285             &     -0.1937      &      -0.1086      &       -0.1685        &      -0.0511      &      -0.1115       \\
+\textbf{ }                       &          (-3.6296)           &           (-2.1611)            &    (-1.8663)     &     (-1.6910)     &      (-2.2977)       &     (-0.8928)     &     (-1.6384)      \\
+\textbf{UD}                      &                              &                                &      0.0102      &                   &                      &       0.0092      &       0.0098       \\
+\textbf{ }                       &                              &                                &     (1.7155)     &                   &                      &      (2.2486)     &      (1.7258)      \\
+\textbf{min\_wage}               &                              &                                &      0.0003      &                   &                      &     2.724e-05     &      5.58e-05      \\
+\textbf{ }                       &                              &                                &     (0.8571)     &                   &                      &      (0.1870)     &      (0.2645)      \\
+\textbf{trend}                   &                              &                                &                  &      -0.0057      &       -0.0029        &      -0.0031      &      -0.0006       \\
+\textbf{ }                       &                              &                                &                  &     (-1.0212)     &      (-0.4728)       &     (-0.4082)     &     (-0.0555)      \\
+\textbf{const}                   &                              &                                &                  &       0.4819      &        0.3871        &       0.3401      &       0.2467       \\
+\textbf{ }                       &                              &                                &                  &      (5.6607)     &       (4.2619)       &      (3.3670)     &      (1.9107)      \\
+\textbf{Country.CZ}              &                              &                                &                  &                   &       -0.0265        &                   &      -0.0157       \\
+\textbf{ }                       &                              &                                &                  &                   &      (-1.2582)       &                   &     (-0.7569)      \\
+\textbf{Country.EE}              &                              &                                &                  &                   &        0.0010        &                   &       0.0447       \\
+\textbf{ }                       &                              &                                &                  &                   &       (0.0431)       &                   &      (0.6113)      \\
+\textbf{Country.HU}              &                              &                                &                  &                   &        0.1514        &                   &       0.1664       \\
+\textbf{ }                       &                              &                                &                  &                   &       (4.4663)       &                   &      (3.1447)      \\
+\textbf{Country.LT}              &                              &                                &                  &                   &        0.1589        &                   &       0.1760       \\
+\textbf{ }                       &                              &                                &                  &                   &       (3.6748)       &                   &      (2.6030)      \\
+\textbf{Country.LV}              &                              &                                &                  &                   &        0.1765        &                   &       0.1540       \\
+\textbf{ }                       &                              &                                &                  &                   &       (18.105)       &                   &      (3.3028)      \\
+\textbf{Country.PL}              &                              &                                &                  &                   &       -0.0270        &                   &      -0.0512       \\
+\textbf{ }                       &                              &                                &                  &                   &      (-0.6965)       &                   &     (-0.8000)      \\
+\textbf{Country.RO}              &                              &                                &                  &                   &        0.0361        &                   &      -0.0416       \\
+\textbf{ }                       &                              &                                &                  &                   &       (0.9983)       &                   &     (-0.7801)      \\
+\textbf{Country.SI}              &                              &                                &                  &                   &        0.1628        &                   &       0.0014       \\
+\textbf{ }                       &                              &                                &                  &                   &       (5.7925)       &                   &      (0.0095)      \\
+\textbf{Country.SK}              &                              &                                &                  &                   &       -0.1817        &                   &      -0.1726       \\
+\textbf{ }                       &                              &                                &                  &                   &      (-6.8356)       &                   &     (-7.1373)      \\
+\textbf{=======================} &        =============         &         =============          &  =============   & ================= &  =================   & ================= & =================  \\
+\textbf{Effects}                 &            Entity            &             Entity             &      Entity      &                   &                      &                   &                    \\
 \bottomrule
-\end{tabular}}
+\end{tabular}
+
+}
 %\caption{Model Comparison}
 \end{center}
 \end{table}
@@ -446,7 +505,6 @@ tertiary education                    &   1.553710 &  22.916981 &   11.065959 & 
 
 
 
-
 \begin{figure}[!htbp]%
     \centering
     {\includegraphics[scale = 0.45]{wage_gaps.png} }
@@ -470,76 +528,172 @@ tertiary education                    &   1.553710 &  22.916981 &   11.065959 & 
 
 \begin{figure}[!htbp]%
         \centering 
-        {\includegraphics[scale=0.7]{labour_supplies_cee.png}}
+        {\includegraphics[scale=0.45]{labour_supplies_cee.png}}
         \caption{Changes in relative high/low skill labour supply in CEE}
         \label{labour_supplies_cee}
 \end{figure}
 
 \begin{figure}[!htbp]%
     \centering 
-    {\includegraphics[scale=0.4]{high_low_log_wage_gap.png}}
+    {\includegraphics[scale=0.45]{high_low_log_wage_gap.png}}
     \caption{Changes in composition adjusted high/low-skill log wage premium}
     \label{high_low_log_wage_gap}
+\end{figure}
+
+
+\begin{figure}[!htbp]%
+    \centering
+    {\includegraphics[scale=0.6]{km_vars_detrended.png} }
+    \caption{Detrended skill wage premium against relative labour supply}
+    \label{km_vars_detrended}
 \end{figure}
 
 
 %% Table 1 - real wage comparisons by country
 \begin{table}[!htbp]
 \centering 
-\caption{Real wage changes by country}
-\label{Real_Wage_Changes}
+\caption{Changes of real wages changes by country - Central Europe}
+\label{Real_Wage_Changes_ce}
 \resizebox{\textwidth}{!}{
-\begin{tabular}{lrrrrrrrr}
+
+
+\begin{tabular}{lrrrrrrrrrr}
 \toprule
-{} & \multicolumn{4}{l}{2009/2005} & \multicolumn{4}{l}{2019/2010} \\
-Country &         CZ &         HU &          PL &         SK &         CZ &         HU &         PL &         SK \\
-Groups                                &            &            &             &            &            &            &            &            \\
+{} &  2010/2007 &  2019/2011 &  2010/2007 &  2019/2011 &  2010/2007 &  2019/2011 &  2010/2007 &  2019/2011 &  2010/2007 &  2019/2011 \\
+Country &         CZ &         CZ &         HU &         HU &         PL &         PL &         SK &         SK &         SI &         SI \\
+Groups                                &            &            &            &            &            &            &            &            &            &            \\
 \midrule
-(upper) secondary education           &  38.828623 &   5.106839 &   41.023482 &  46.329867 &  21.246955 &  16.982531 &  25.836694 &  19.611324 \\
-15-25                                 &  37.735096 &   2.576276 &   44.265461 &  43.973111 &  21.615249 &   4.190224 &  11.347331 &  14.501360 \\
-25-35                                 &  34.731870 &   3.838503 &   38.939771 &  47.953055 &  18.736149 &  -4.538388 &   4.833880 &  15.114014 \\
-35-45                                 &  46.698066 &  -7.302872 &   47.479400 &  46.557664 &   9.731047 &  -3.071883 &  13.936687 &  16.920323 \\
-5-15                                  &  38.056647 &  -7.217686 &   43.943412 &  41.216961 &  15.613189 & -10.913009 &  -1.608664 &  13.782451 \\
-<5                                    &  38.080200 &  -2.364743 &   42.605459 &  42.976197 &  19.379663 &   2.437448 &  12.465816 &   8.583492 \\
->45                                   &  34.348027 &  42.928061 &   13.957420 &   8.663529 &   8.434992 &  51.864065 &  -9.880202 &  -8.505775 \\
-Female                                &  35.753453 &   0.688904 &   40.377275 &  43.865768 &  16.752155 &  -4.273426 &   8.616497 &  17.637820 \\
-Male                                  &  39.159948 &  -3.237964 &   44.665681 &  44.441757 &  18.388546 &  -1.745594 &   5.838457 &  10.782699 \\
-first stage of tertiary education     &  37.451357 &  -4.263188 &   44.791297 &  42.997217 &  15.694162 & -14.861748 & -33.213723 &   9.659985 \\
-lower secondary education             &  39.202858 &   6.311515 &  205.665620 &  45.845298 &  23.366672 &  21.053662 &  48.735124 &  18.315751 \\
-post-secondary non tertiary education &        NaN &  15.353136 &   30.994040 &        NaN &        NaN &  12.376832 &  16.263238 &        NaN \\
-primary education                     &  -8.877166 &        NaN &   43.756264 &        NaN & -66.282752 &        NaN &  24.581737 &        NaN \\
+%(upper) secondary education           &  16.595227 &  17.727918 &  -2.792900 &  17.749656 &   2.079740 &  18.991410 &  37.263530 &  18.773899 &   9.003570 &   4.400152 \\
+$<$5                                    &  13.292203 &  12.484792 & -13.301797 &   1.992760 &   1.404850 &   2.158435 &  43.029078 &  14.963351 &   2.532791 &  -4.005816 \\
+5-15                                  &  15.490846 &  12.065493 &  -9.345043 &  -4.194209 &   0.206450 &  -6.249807 &  44.631900 &  14.671115 &   6.545352 &  -8.444205 \\
+15-25                                 &  15.974291 &  15.734025 &  -5.772473 &   5.305644 &  -2.669173 &   7.435828 &  36.098234 &  13.677924 &   8.370083 &  -4.945813 \\
+25-35                                 &  12.657331 &  13.878316 &  -6.565035 &  -4.745099 &  -0.645663 &  -2.863376 &  33.044754 &  10.769683 &   9.746011 &  -2.121099 \\
+35-45                                 &  14.679464 &   8.743428 & -10.412439 &  -6.204726 &  -4.694525 &   3.389281 &  34.904562 &  17.388578 &  13.090370 &  -3.692145 \\
+%5-15                                  &  15.490846 &  12.065493 &  -9.345043 &  -4.194209 &   0.206450 &  -6.249807 &  44.631900 &  14.671115 &   6.545352 &  -8.444205 \\
+%$<$5                                    &  13.292203 &  12.484792 & -13.301797 &   1.992760 &   1.404850 &   2.158435 &  43.029078 &  14.963351 &   2.532791 &  -4.005816 \\
+$>$45                                   &  16.969656 &  22.386638 &  40.081575 & -57.108594 & -20.501749 & -13.079941 &  86.422321 &   1.240834 &  89.739821 &   2.103319 \\
+Female                                &  16.466768 &  12.904817 & -10.231480 &  -2.504522 &   0.592534 &   1.988888 &  39.512075 &  16.257187 &   4.963890 &  -7.061669 \\
+Male                                  &  13.726690 &  13.509837 &  -6.801153 &  -1.191443 &  -2.056478 &  -0.829993 &  38.315302 &  12.038894 &   9.684599 &  -3.691119 \\
+primary education                     &        NaN &        NaN &        NaN &        NaN &  -6.431957 &  16.742316 &  14.892138 & -19.080876 &        NaN &        NaN \\
+lower secondary education             &  12.661607 &  21.167355 &  -4.838441 &  17.668417 &   1.545489 &  36.688322 &  41.083019 &  19.807928 &   9.676708 &   8.913304 \\
+(upper) secondary education           &  16.595227 &  17.727918 &  -2.792900 &  17.749656 &   2.079740 &  18.991410 &  37.263530 &  18.773899 &   9.003570 &   4.400152 \\
+post-secondary non tertiary education &        NaN &        NaN &  -6.564271 &  11.965689 &   3.763429 &   8.793980 &        NaN &        NaN &        NaN &        NaN \\
+%primary education                     &        NaN &        NaN &        NaN &        NaN &  -6.431957 &  16.742316 &  14.892138 & -19.080876 &        NaN &        NaN \\
+tertiary education                    &  13.503349 &  10.458081 & -10.876622 & -13.326144 &  -3.078349 & -17.315706 &  39.555843 &  10.173994 &   6.793411 & -11.944414 \\
 \bottomrule
-\end{tabular}}
+\end{tabular}
+
+
+}
 \end{table}
 
-% TODO: update this to the ntb result
+
 \begin{table}[!htbp]
 \centering 
-\caption{Relative labour supply changes by country}
-\label{Real_Wage_Changes}
+\caption{Changes of real wages changes by country - Balkans and Baltics}
+\label{Real_Wage_Changes_bb}
 \resizebox{\textwidth}{!}{
-\begin{tabular}{lrrrrrrrr}
+\begin{tabular}{lrrrrrrrrrr}
 \toprule
-{} & \multicolumn{4}{l}{2009/2005} & \multicolumn{4}{l}{2019/2010} \\
-Country &         CZ &         HU &          PL &         SK &         CZ &         HU &         PL &         SK \\
-Groups                                &            &            &             &            &            &            &            &            \\
+{} &  2010/2007 &  2019/2011 &  2010/2007 &  2019/2011 &  2010/2007 &  2019/2011 &  2010/2007 &  2019/2011 &   2010/2007 &   2019/2011 \\
+Country &         BG &         BG &         EE &         EE &         LT &         LT &         LV &         LV &          RO &          RO \\
+Groups                                &            &            &            &            &            &            &            &            &             &             \\
 \midrule
-(upper) secondary education           &  38.828623 &   5.106839 &   41.023482 &  46.329867 &  21.246955 &  16.982531 &  25.836694 &  19.611324 \\
-15-25                                 &  37.735096 &   2.576276 &   44.265461 &  43.973111 &  21.615249 &   4.190224 &  11.347331 &  14.501360 \\
-25-35                                 &  34.731870 &   3.838503 &   38.939771 &  47.953055 &  18.736149 &  -4.538388 &   4.833880 &  15.114014 \\
-35-45                                 &  46.698066 &  -7.302872 &   47.479400 &  46.557664 &   9.731047 &  -3.071883 &  13.936687 &  16.920323 \\
-5-15                                  &  38.056647 &  -7.217686 &   43.943412 &  41.216961 &  15.613189 & -10.913009 &  -1.608664 &  13.782451 \\
-<5                                    &  38.080200 &  -2.364743 &   42.605459 &  42.976197 &  19.379663 &   2.437448 &  12.465816 &   8.583492 \\
->45                                   &  34.348027 &  42.928061 &   13.957420 &   8.663529 &   8.434992 &  51.864065 &  -9.880202 &  -8.505775 \\
-Female                                &  35.753453 &   0.688904 &   40.377275 &  43.865768 &  16.752155 &  -4.273426 &   8.616497 &  17.637820 \\
-Male                                  &  39.159948 &  -3.237964 &   44.665681 &  44.441757 &  18.388546 &  -1.745594 &   5.838457 &  10.782699 \\
-first stage of tertiary education     &  37.451357 &  -4.263188 &   44.791297 &  42.997217 &  15.694162 & -14.861748 & -33.213723 &   9.659985 \\
-lower secondary education             &  39.202858 &   6.311515 &  205.665620 &  45.845298 &  23.366672 &  21.053662 &  48.735124 &  18.315751 \\
-post-secondary non tertiary education &        NaN &  15.353136 &   30.994040 &        NaN &        NaN &  12.376832 &  16.263238 &        NaN \\
-primary education                     &  -8.877166 &        NaN &   43.756264 &        NaN & -66.282752 &        NaN &  24.581737 &        NaN \\
+%(upper) secondary education           &  34.169631 &  48.082543 &  15.294322 &  28.030395 &  -9.759740 &  46.361597 &  20.016842 &  39.274502 &   -9.949148 &   71.059771 \\
+$<$5                                    &  47.330489 &  46.999261 &  -2.786063 &  27.692451 & -21.782520 &  43.721896 &  12.934346 &  40.860507 &  -10.227069 &   80.734811 \\
+5-15                                  &  39.495721 &  58.990249 &  17.017189 &  23.508816 &  -9.050369 &  44.872473 &  27.472710 &  33.046852 &  -15.907555 &   66.301508 \\
+15-25                                 &  38.971626 &  62.226653 &  24.511844 &  29.143427 &   3.417652 &  43.966947 &  19.711511 &  45.794507 &  -11.472192 &   70.141590 \\
+25-35                                 &  41.241964 &  47.981114 &  25.221330 &  28.599171 &   0.019808 &  37.385062 &  29.161357 &  37.007500 &  -14.133517 &   67.328592 \\
+35-45                                 &  48.925777 &  59.413050 &  23.044023 &  23.929130 &   6.100906 &  25.092660 &  23.943484 &  37.257713 &  -27.240479 &   64.900808 \\
+%5-15                                  &  39.495721 &  58.990249 &  17.017189 &  23.508816 &  -9.050369 &  44.872473 &  27.472710 &  33.046852 &  -15.907555 &   66.301508 \\
+%$<$5                                    &  47.330489 &  46.999261 &  -2.786063 &  27.692451 & -21.782520 &  43.721896 &  12.934346 &  40.860507 &  -10.227069 &   80.734811 \\
+$<$45                                   &  16.741057 &  80.343981 &  45.896240 &  51.709741 & -24.018872 &  23.309385 &  28.600122 &  28.044531 & -170.377774 &  104.299231 \\
+Female                                &  42.140465 &  59.076116 &  21.635277 &  30.356567 &   0.618485 &  33.349480 &  26.489896 &  34.992677 &  -14.005371 &   73.227794 \\
+Male                                  &  40.929483 &  54.063529 &  16.225103 &  24.603861 &  -9.107269 &  46.648602 &  20.246848 &  41.156555 &  -15.908893 &   66.045212 \\
+primary education                     &  18.277370 &  35.193310 &  13.006796 &  52.001774 & -10.855238 &  49.018434 &  75.204162 &  87.603874 &   -8.930614 &   94.121130 \\
+lower secondary education             &  25.414493 &  29.361815 &  12.579510 &  15.265605 & -13.902503 &  34.663328 &  14.897043 &  39.491236 &  -18.434239 &   77.152514 \\
+(upper) secondary education           &  34.169631 &  48.082543 &  15.294322 &  28.030395 &  -9.759740 &  46.361597 &  20.016842 &  39.274502 &   -9.949148 &   71.059771 \\
+post-secondary non tertiary education &  19.765816 &  79.095391 &  18.719176 &  26.865995 &  -4.276447 &  40.013376 &  20.818130 &  38.422394 &   -6.907480 &   73.697912 \\
+%primary education                     &  18.277370 &  35.193310 &  13.006796 &  52.001774 & -10.855238 &  49.018434 &  75.204162 &  87.603874 &   -8.930614 &   94.121130 \\
+tertiary education                    &  47.536173 &  62.580966 &  20.829847 &  27.525643 &  -2.795276 &  38.959689 &  25.199548 &  37.588198 &  -17.014110 &   67.006217 \\
 \bottomrule
-\end{tabular}}
+\end{tabular}
+}
 \end{table}
+
+
+
+
+
+% Table 2 - individual countries a)
+\begin{table}[!htbp]
+\centering 
+\caption{Relative labour supply changes by country - Central Europe}
+\label{labour_supply_changes_ce}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+{} &  2010/2007 &  2019/2011 &  2010/2007 &   2019/2011 &  2010/2007 &  2019/2011 &  2010/2007 &   2019/2011 &  2010/2007 &   2019/2011 \\
+Country &         CZ &         CZ &         HU &          HU &         PL &         PL &         SK &          SK &         SI &          SI \\
+Groups                                &            &            &            &             &            &            &            &             &            &             \\
+\midrule
+%(upper) secondary education           &  -4.072809 &  -6.978868 &  -4.258382 &  -14.639163 &  -5.887259 & -12.735159 &  -7.592798 &    0.478960 &  -1.317696 &  -16.957616 \\
+$<$5                                    &   8.226937 &  -8.964951 & -10.410914 &   -7.212603 &   1.465125 & -42.976057 &  15.683775 &  -42.556512 &   1.303569 &  -38.138896 \\
+15-25                                 &   1.231744 & -12.722249 &  -4.766265 &   -7.567406 & -11.520447 &  18.913838 &  -7.891195 &    4.435811 & -11.531289 &    1.571734 \\
+25-35                                 &   2.367041 &   9.069147 &   7.254298 &    1.364161 &  -5.938776 & -24.437601 &  -2.540541 &  -12.859471 &   3.443666 &  -13.001034 \\
+35-45                                 &  -2.820841 &  10.661964 &  40.908923 &   28.621185 &  30.080666 &  27.337031 &  14.292898 &   21.478962 &  12.836356 &   64.505852 \\
+5-15                                  &  -6.422063 &  -0.039276 & -14.599780 &  -15.640995 &   5.180733 &   8.675418 &  -1.798339 &   16.635153 &   4.815126 &    3.894283 \\
+%$<$5                                    &   8.226937 &  -8.964951 & -10.410914 &   -7.212603 &   1.465125 & -42.976057 &  15.683775 &  -42.556512 &   1.303569 &  -38.138896 \\
+$>$45                                   &  49.114285 &  53.040895 &  47.969350 &  151.887733 &   4.788782 &  17.825691 &  33.106098 &   41.217003 &  50.342057 &  145.376930 \\
+Female                                &   1.896840 &   5.510090 &   2.314666 &   -0.537905 &   6.180807 &   6.427731 &   1.206245 &   -1.029751 &   2.865350 &    1.253471 \\
+Male                                  &  -0.930675 &  -2.870336 &  -1.592832 &    0.402593 &  -3.707420 &  -4.259695 &  -0.772012 &    0.659910 &  -2.048722 &   -0.937857 \\
+primary education                     &        inf &        inf &        NaN &         NaN & -20.218391 & -53.699785 & -81.802288 & -105.235923 & -62.171101 &        -inf \\
+lower secondary education             &  -7.342903 & -14.269409 &  -0.214999 &   17.948349 &  59.969552 &  66.649061 &   5.393534 &    6.398527 & -16.042602 &  -54.422373 \\
+post-secondary non tertiary education &  -1.215507 &       -inf &  -6.539873 &    6.072272 &  -0.771252 & -61.832275 &        inf &   -5.867509 &        NaN &         NaN \\
+(upper) secondary education           &  -4.072809 &  -6.978868 &  -4.258382 &  -14.639163 &  -5.887259 & -12.735159 &  -7.592798 &    0.478960 &  -1.317696 &  -16.957616 \\
+%pre-primary education                 &        NaN &        NaN &        NaN &         NaN & -81.038886 &       -inf &        NaN &         NaN &        NaN &         NaN \\
+%primary education                     &        inf &        inf &        NaN &         NaN & -20.218391 & -53.699785 & -81.802288 & -105.235923 & -62.171101 &        -inf \\
+tertiary education                    &  11.830884 &  20.047701 &   7.377572 &   12.992954 &  13.578050 &  25.139745 &  11.664222 &   -1.072560 &   8.347106 &   26.038308 \\
+\bottomrule
+\end{tabular}
+
+}
+\end{table}
+
+% Table 2 - individual countries b)
+\begin{table}[!htbp]
+\centering 
+\caption{Relative labour supply changes by country - Balkans and Baltics}
+\label{labour_supply_changes_bb}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+{} &   2010/2007 &  2019/2011 &   2010/2007 &  2019/2011 &  2010/2007 &  2019/2011 &   2010/2007 &  2019/2011 &  2010/2007 &  2019/2011 \\
+Country &          BG &         BG &          EE &         EE &         LT &         LT &          LV &         LV &         RO &         RO \\
+Groups                                &             &            &             &            &            &            &             &            &            &            \\
+\midrule
+%(upper) secondary education           &    1.270990 &  -7.472449 &   -4.219765 & -24.563782 & -17.017731 & -11.006235 &  -11.814197 & -21.036536 &  -2.075079 &  -0.143069 \\
+$<$5                                    &   -0.951242 &  10.550018 &   -1.107954 &  -3.477220 & -11.578134 & -18.084308 &    5.888761 & -27.601205 &  -3.182683 & -48.302524 \\
+15-25                                 &   -0.552386 &  -0.697178 &   -3.466915 & -14.004675 & -11.787495 & -28.160306 &   -8.130503 &  -8.438484 &   9.563295 &  -5.306868 \\
+25-35                                 &   -3.163274 &  -3.337190 &    0.920876 &  -9.686528 &   5.593757 & -19.990798 &    1.250872 & -13.213702 & -13.230831 &  12.441937 \\
+35-45                                 &   21.015362 &   9.278204 &    5.498243 &  21.481766 &  24.406446 &  57.209064 &   -5.444474 &  26.575962 &  31.079075 &  15.631660 \\
+5-15                                  &   -7.183673 &  -8.973120 &    2.123712 &   9.307710 &   8.432220 &  24.372235 &    7.235132 &  16.005090 &  -4.018921 &  -2.376742 \\
+%$<$5                                    &   -0.951242 &  10.550018 &   -1.107954 &  -3.477220 & -11.578134 & -18.084308 &    5.888761 & -27.601205 &  -3.182683 & -48.302524 \\
+$>$45                                   &  117.220952 &  85.395334 &   -9.337257 &  40.949785 &  -8.184769 &  58.456756 &  -33.811906 &  46.149722 & -71.209834 &  49.650510 \\
+Female                                &    2.279623 &  -2.792326 &    7.251265 &  -5.924975 &   7.980956 &  -3.975438 &    9.192610 &  -3.627072 &   1.804030 &  -0.504534 \\
+Male                                  &   -1.511782 &   1.978517 &   -4.949785 &   4.096353 &  -6.727155 &   3.277389 &   -7.089635 &   2.914129 &  -1.088929 &   0.314719 \\
+primary education                     &  -28.277864 &  -6.329743 &   43.808599 & -38.810912 &   4.774837 & -66.305449 & -134.875227 &  30.864208 & -58.023669 & -20.616426 \\
+lower secondary education             &    7.138331 & -16.992489 &  -15.246012 &  16.672097 &   9.909781 & -47.284491 &  -25.265803 & -61.291948 & -14.709289 & -30.352261 \\
+(upper) secondary education           &    1.270990 &  -7.472449 &   -4.219765 & -24.563782 & -17.017731 & -11.006235 &  -11.814197 & -21.036536 &  -2.075079 &  -0.143069 \\
+post-secondary non tertiary education &  -72.709787 & -18.049389 & -104.662174 &  71.492996 & -20.440135 &  -1.336479 &  -52.989267 &  41.567394 &  -0.935263 &   3.934652 \\
+%pre-primary education                 &   72.507726 &       -inf &         NaN &        NaN &        NaN &        NaN & -112.070892 &       -inf &        NaN &        NaN \\
+%primary education                     &  -28.277864 &  -6.329743 &   43.808599 & -38.810912 &   4.774837 & -66.305449 & -134.875227 &  30.864208 & -58.023669 & -20.616426 \\
+tertiary education                    &   -1.393563 &  14.118566 &   15.750078 &   9.996584 &  17.107347 &   7.413791 &   28.973587 &  13.829629 &  19.051972 &   9.350157 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
 
 
 \begin{table}[!htbp]
