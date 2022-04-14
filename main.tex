@@ -4,6 +4,7 @@
 \usepackage{booktabs}
 \usepackage{caption}
 \captionsetup[figure]{font=small,labelfont=small}
+\captionsetup[table]{font=small,labelfont=small}
 %\usepackage[margin=1.5in]{geometry}
 
 \title{Skill-bias and Wage Inequality in CEE: empirical investigation}
@@ -96,44 +97,45 @@ Card and Lemieux (2001) and Glitz and Wissmann (2021) offer an extension of the 
 Routine Biased Technological change is then a further extension of the model above (in fact it nests the Canonical model as its specific case). The key idea of this framework is an economic activity primarily consisting of tasks that can be divided between routine and non-routine and further between cognitive and non-cognitive. The technological change is assumed to substitute the routine tasks and strengthen position of non-routine ones. The framework is thus able to explain polarization patterns visible in the US labour market in 1990s (Autor, 2014). This framework is formally elaborated by Acemoglu and Autor (2011).
 
 \subsection{Variables Construction}
-We follow proceedings of Katz and Murphy (1992) and Glitz and Wissmann (2021) while calculating variables for equation \ref{eqn:STBC_regression}. For calculation of variables and statistics below we divide our data into groups defined by sex, experience level (6 categories) and highest attained ISCED education category.
-We compute an estimate of total hours worked in each group and each year as weeks worked times usual weekly hours and personal sample weight from the survey. In a similar fashion we compute average weekly wages for full-time workers for each of the groups defined above.
-
-We sum over all individuals in the group to get a total labour supply in a given group and year. Subsequently we compute relative share of each group in total labour supply in a given year and use this measure to calculate a vector of average employment shares for each group over all available years in the sample. We use this fixed weights together with the groups' average wages matrix to calculate time series of relative wages by groups. An average of this time series through time can be interpreted as estimate of the average relative wage of a given group. \footnote{Each group's average weekly wages and weighted by the fixed weights, creating a time series of indices for each of the sample by which we then weight wages for all groups in a given year.} % this should be N' W
+We follow proceedings of Katz and Murphy (1992) and Glitz and Wissmann (2021) while calculating variables used in equation \ref{eqn:STBC_regression}. For calculation of variables and statistics below we divide our data into groups defined by sex, experience level (6 categories based on time after finishing the highest level of education) and highest attained ISCED education category.
+We compute an estimate of total hours worked in each group and each year as weeks worked times usual weekly hours and personal sample weight from the survey. In a similar fashion we compute average weekly wages for full-time workers for each of the education-experience-gender groups defined above \footnote{As the survey does not contain information about worked weeks but only worked months, we assume that the person worked 4 weeks in every months to get our estimate. In the rest of the work prefer variables in monthly frequency (monthly wages etc.)}.
+\\
+% Obtaining average relative wage per group
+We start by calculating statistics used further in the process. We sum over all individuals in the group to get a total labour supply in a given group and year (so-called count sample). Subsequently we compute relative share of each group in total labour supply in a given year and use this measure to calculate a vector of average employment shares for each group over all available years in the sample. We use this fixed weights together with the groups' average wages matrix to calculate time series of relative wages by groups. An average of this time series through time can be interpreted as estimate of the average relative wage of a given group. \footnote{Each group's average weekly wages are weighted by the fixed weights, creating a time series of indices for each of the sample by which we then weight wages for all groups in a given year.} % this should be N' W
 % Efficiency units 
-The relative labour supply and other descriptive statistics below are obtained using efficiency units. Efficiency units are essentially the labour supplies (hours worked) for each education-age-gender-year group multiplied by the group's average relative wage estimate defined above. Result of this operation is then labour supply for each group in each year. We construct more aggregated measured of LS by summing over these groups in each skill group (education category, high and low).
+The relative labour supply and other descriptive statistics below are obtained using efficiency units. Efficiency units are essentially the labour supplies (hours worked) for each education-experience-gender-year group multiplied by the group's average relative wage estimate defined above. Result of this operation is then labour supply for each group in each year. We construct more aggregated measured of LS by summing over these groups in each skill group (education category, high and low).
 % Labour Supply
-We calculate the final supply of high vs. low skill labour supply (more precisely of tertiary vs. non-tertiary education) as a sum of respective cells for tertiary and lower than tertiary education groups.
+We calculate the final supply of high vs. low skill labour supply (more precisely of tertiary vs. non-tertiary education) as a sum of respective cells for tertiary and lower than tertiary education groups. Similarly, the changes of labour supply in table \ref{labour_supply_changes_agg} are also sums of corresponding groups.
 % Wage premiums = weighted average of education-age-gender-year group's wages
-To get the skill wage premium, we use the average wages for each education-age-gender-year group, mentioned above. We calculate the high/low skill group's composition-adjusted wage as a weighted average of the groups' wages with weights defined as each group's average share of the respective skill group's (high/low) total labour supply over all observed years (i.e. we give the highest weight to the wages which provided the highest share of labour supply in the given skill group).
+To get the skill wage premium, we use the average wages for each education-age-gender-year group, mentioned above (so-called wage sample). We calculated the high/low skill group's composition-adjusted wage as a weighted average of the respective groups' wages with weights defined as each group's average share of the respective (high/low) skill group's total labour supply over all observed years (i.e. we give the highest weight to the wages which provided the highest share of labour supply in the given skill group). As before the groups included in the high skill category are those with tertiary or higher education, low skill category are all the other. Skill premium is than a ratio of the composition-adjusted wages of the two groups. 
 % check this, primary source KM Table II!
-In line with the equation \ref{eqn:STBC_regression}, we than use a logarithm of in the regressions below....
+In line with the equation \ref{eqn:STBC_regression}, we than use logs of the skill premium and of relative labour supply in the regressions below to obtain the estimate of elasticity of substitution. Efficiency units are also used in the descriptive statistics.
 
-% TODO: add estimation info such as efficiency unies, etc.; see Acemoglu and also GLitz and Wissmann. Expand massively, also add much more description to the graphs.
 
 \section{Results}
 \subsection{Descriptive analysis}
-In our analysis we used the Eurostat EU-SILC database for the CEE countries (Czech Republic, Slovakia, Poland, Hungary, Latvia, Estonia, Lithuania, Romania and Bulgaria) between years 2005 and 2019. EU-SILC collects information about income, poverty, social exclusion and living conditions across the EU countries. Our database contains records of more than 2 million individuals in total.\\ In the analysis below we aggregated the countries into three regional blocks - Central Europe (the "Visegrad"), Baltic (Latvia, Estonia and Lithuania) and two Balkan countries - Romania and Bulgaria. This division was inspired by geographical and socioeconomic closeness of the countries.\footnote{We add Slovenia to the Central European countries, as its macroeconomic performance resembles fits them better than Romania and Bulgaria} % TODO: this part would be worth precising, also maybe move this to another section?
-The results below refer to these regional blocks, results for individual countries are presented in the Appendix. We choose 2011-2019 as our main period of interest due to data limitations (data for Bulgaria and Romania and various variable changes during the period of time) and also in order to concentrate on post the 2008 crisis era.
+In our analysis we used the Eurostat EU-SILC database for the CEE countries (Czech Republic, Slovakia, Poland, Hungary, Latvia, Estonia, Lithuania, Romania and Bulgaria) between years 2005 and 2019. EU-SILC collects information about income, poverty, social exclusion and living conditions across the EU countries. Our database contains records of more than 2 million individuals in total.\\ For presentation purposes, we aggregated the countries into three regional blocks in the analysis below - Central Europe (the "Visegrad" countries), Baltics (Latvia, Estonia and Lithuania) and two Balkan countries - Romania and Bulgaria. This division was inspired by geographical and socioeconomic closeness of the countries.\footnote{We add Slovenia to the Central European countries, as its macroeconomic performance resembles them better than Romania and Bulgaria} % TODO: this part would be worth precising, also maybe move this to another section?
+The results below refer to these regional blocks, results for individual countries are presented in the Appendix \footnote{Note that we calculate the aggregated metrics by pooling all observation in a region together and than treating it a single territory i.e. the statistics below are not averages of individual countries' statistics in the Appendix.}. We choose 2011-2019 as our main period of interest due to data limitations (data for Bulgaria and Romania and various variable changes during the period of time) and also in order to concentrate on the post 2008 crisis era.
 
 % Table 1 and Table 2 - wage and LS changes tables with commentary
 % TODO: compare to the US case (KM 92)
-Table \ref{real_wage_changes_agg} shows log changes in real wage for several groups of full-time workers for two time periods - 2007$/$2010 and 2011$/$2019. We calculate the real wages by deflating nominal wages in each period by the country's Harmonised index of consumer prices obtained from Eurostat. Subsequently we calculate the changes for males and females, five education categories and six experience groups. First of all, we note quite strong real wage growth for the highest education category (tertiary education or higher) in all regions apart from the Central Europe where we find small decline between 2011 and 2019. In Baltic and Balkan case is notable growth across all categories. The situation in the Central Europe is somewhat different at least in the later periods - we can see decline in both highest and lowest education category contrasting with wage increases across secondary education. Real wages also declined for the most experienced workers in this region ($>$ 45).\footnote{Note however that the results for primary education category is driven by relatively low number of observations and only two countries - Poland and Slovakia}.
-In a similar fashion, table \ref{labour_supply_changes_agg} shows changes in relative labour supply, concretely we depict log changes in each group's share of total labor supply measured in efficiency units. The results show steady rise of female share in the labour supply and also rise of the highest education categories across the regional groups. Among the experience categories we see rising labour supply for the higher experience groups and declines in case of workers with less than five years of working experience, probably a sign of population ageing.
+Table \ref{real_wage_changes_agg} shows log changes in real wage for several groups of full-time workers for two time periods - 2007$/$2010 and 2011$/$2019. We calculate the real wages by deflating nominal wages in each period by the country's Harmonised index of consumer prices obtained from Eurostat. Subsequently we calculate the changes for males and females, five education categories and six experience groups. First of all, we note quite strong real wage growth for the highest education category (tertiary education or higher) in all regions apart from the Central Europe where we find small decline between 2011 and 2019. Table \ref{real_wage_changes_agg} however also shows that in none of the regions is the tertiary education's wages the fastest growing, they are always surpased by (at least) one of the secondary education categories' wage growth.
+In Baltic and Balkan case is notable growth across all education categories. The situation in the Central Europe is somewhat different at least in the later periods - we can see decline in both highest and lowest education categories contrasting with wage increases across secondary education. Real wages also declined for the most experienced workers in this region ($>$ 45).\footnote{Note however that the results for primary education category is driven by relatively low number of observations and only two countries - Poland and Slovakia}.
+In a similar fashion, table \ref{labour_supply_changes_agg} shows changes in relative labour supply, concretely we depict log changes in each group's share of total labour supply measured in efficiency units. The results show steady rise of female share in the labour supply and also rise of the highest education categories across the regional groups. Among the experience categories we see rising labour supply for the higher experience groups and declines in case of workers with less than five years of working experience, probably a sign of population ageing.
 
 % Figure 11 and 12 - here 
-In Figure \ref{low_deciles_vs_min_w} we can see a development of the log minimal wage against the 1st percentile and decile of the wage distribution. We can see that the minimal wage closely copies the first decile of our sample. We can also note a diverging trend for Romania and Bulgaria after 2015. Figure \ref{high_deciles_vs_meam_w} than portrays a similar picture for higher segments of the distribution and log of mean wage for given region for Eurostat (EU-SES).
+Figure \ref{low_deciles_vs_min_w} shows a development of the log minimal wage against the 1st percentile and 1st decile of the wage distribution (we use an annual log wages of full-time workers). We can see that the minimal wage closely copies the first decile of our sample. We can also note a diverging trend for Romania and Bulgaria after 2015. Figure \ref{high_deciles_vs_meam_w} then portrays a similar picture for higher segments of the distribution and log of mean wage for given region from Eurostat. We see the depicted lines to go mostly in parallel with exception of mean and median converging around 2008 in Central Europe and Baltics and in the most recent period in Romania and Bulgaria. Overall, comparison of both figures shows significantly highest variation of the lowest wages compared to the higher percentiles. This is especially visible in case of Baltics as well as Romania and Bulgaria. The relative behaviour is further investigated in the figures below. Minimal and average wages data were obtained via Eurostat we used an average of the respective variable for the countries in each region as the final metric.
 
 % Figure 1 - TODO: any interpretation of those numbers
 % TODO: 50/10 seems to be significantly more volatile than 90/50 
 To sum-up general development of labour market inequality, Figure \ref{agg_wage_gaps_CEE} portrays 50/10 and 90/50 wage gap (ratio of percentiles of an annual log wage distribution) development for full-time workers in the three regions defined above.
-Figure \ref{agg_wage_gaps_CEE} shows that the pay gaps developed differently in the three regions, despite being generally different to the US data as found for example in (Mishel, Shierholz and Schmitt, 2013). In case of the central European countries there is a tendency for relatively long-term and monotonic decrease for the 90/50 wage gap, a finding contrary to the US and Western Europe evidence as well as the hypothesis of job polarization and "hollowing-out" of the middle class. We can also note mostly decreasing tendency of the 50/10 ratio a movement more in line with the US evidence as the least paid jobs seem to be catching up with the median. Similar tendency can be observed for the Baltic countries with a notable exception of steep rise of wage inequality after the crisis in 2008, this phenomena is visible yet less pronounced in the Visegrad countries as well. The Balkan countries on the other hand experience rather flat 90/50 ratio after 2012 and reversed trend in the lowest 50/10 in recent years. On the other hand, there is no negative reaction to the 2008 crisis with the ratios continuing to decline around the year 2010.
+Figure \ref{agg_wage_gaps_CEE} shows that the pay gaps developed differently in the three regions, despite being generally different to the US data as found for example in (Mishel, Shierholz and Schmitt, 2013). In case of the central European countries there is a tendency for relatively long-term and monotonic decrease for the 90/50 wage gap, a finding contrary to the US and Western Europe evidence as well as the hypothesis of job polarization and "hollowing-out" of the middle class. We can also note mostly decreasing tendency of the 50/10 ratio a movement more in line with the US evidence as the least paid jobs seem to be catching up with the median. Similar tendency can be observed for the Baltic countries even though the 90/50 curve is significantly flatter and 50/10 curve more volatile, a phenomenon exemplified by a steep rise of wage inequality after the crisis in 2008, this phenomena is also visible yet less pronounced in central Europe. The Balkan countries on the other hand experience rather flat 90/50 ratio after 2012 and reversed trend in the lowest 50/10 in recent years. On the other hand, there is no negative reaction to the 2008 crisis with the ratios continuing to decline around the year 2010.
 In general we can see strengthening of the lower part of the income distribution in Central Europe, to lesser degree in the other two regions. The development also contrasts with German experience where we can see a general upward trend for both wage gaps (90/50 and 50/10) at least until 2015 (Biewen and Sturm, 2021).
 
 
 %Figure 2 - look at Acemoglu, 2012 and so on I consider extending the graph description if necessary.
 % TODO magnitudes, compare with Acemoglu
-In Figure \ref{agg_wage_changes_percentiles_11_19} we can find changes in log wages percentiles of full-time workers relative to the median between 2011 and 2019. Unlike the U-shaped curve characteristic of wage polarization visible in the similar plot for the US (Acemoglu and Autor, 2011) we can instead observe a monotonic behaviour for the Visegrad counties with a clear tendency for decline of the highest percentiles relative to median. Similar, yet less pronounced picture is visible for the Baltics whereas the same plot for Romania and Bulgaria shows rather contrasting picture with declining lowest percentiles and tendency for an increase for two highest deciles.
+In Figure \ref{agg_wage_changes_percentiles_11_19} we can find changes in log wages percentiles of full-time workers relative to the median between 2011 and 2019. Unlike the U-shaped curve characteristic of wage polarization visible in the similar plot for the US (Acemoglu and Autor, 2011) we can instead observe a monotonic behaviour for the Visegrad counties with a clear tendency for decline of the highest percentiles relative to median. Similar, yet less pronounced picture is visible for the Baltics whereas the same plot for Romania and Bulgaria shows rather contrasting picture with declining lowest percentiles and tendency for an increase for the two highest deciles.
 \footnote{Note that Figure \ref{agg_wage_changes_percentiles} shows that for 2007-2019 period the graphs for Baltic and Balkan countries, in contrast, show declining tendency from lowest percentiles and rather flat behaviour afterwards.} In general, the graphs confirm the conclusions from figure \ref{wage_gaps_CEE}. In contrast to the Western evidence we do not find relative rise of the highest incomes even though the outcomes differs among regions.
 
 
@@ -142,8 +144,8 @@ In Figure \ref{agg_wage_changes_percentiles_11_19} we can find changes in log wa
 Figure \ref{agg_employ_changes_percentiles} shows changes of employment shares for the ISCO-08 occupations skill rank between 2011-2019 \footnote{The starting year of the analysis is chosen due to changes in ISCO classification in the EU-SILC dataset}, it also depicts a locally-weighted smoothing regression curve. Compared to the US evidence, we most notably never see a characteristic U-shape found in Acemoglu (2012) for the 90s and 00s US labour market interpreted as the job-polarization. We can notice a rather different and diversified, however quite monotonic behaviour across the CEE countries. There is a declining tendency for the high-income occupations in case of Central Europe, whereas for the Balkan states we an opposite tendency for rising employment high-income occupations. Compared to the US benchmark however, we should note that all the curves are rather flat with the magnitude of the changes in employment shares being relatively low, an phenomenon especially pronounced in the Baltics (note this conclusion is not reached in case of Figure \ref{agg_wage_changes_percentiles_11_19}. We can also note an increasing variance of the estimates in Balkan and Baltics in upper half of the distribution. Overall, the results do not confirm the job polarization logic but we also do not confirm any other strong tendency (perhaps with exception of the Central Europe). 
 
 % Figures 4, 5 describing NACE/ILO codes decomposition for wages and employment
-Figures \ref{wage_changes_nace} and \ref{employ_changes_nace} show the relative changes in NACE classification of economic activities. We can note especially strong growth of wages in manufacturing and construction in central European countries  - this seems to be in line strong position of these countries in the European manufacturing core (Stöllinger, 2016). On the other hand - key public sectors are falling behind in this region and we see a strong performance of Finance in Baltic countries. In Romania and Bulgaria, the public sectors are on the other hand rising. Figure \ref{employ_changes_nace} then documents that changes in relative wage in the NACE categories are often associated with moves in relative employment in an opposite direction (see Construction in Central Europe or Finance in the Baltics). This seems be in line in one of the fundamental hypotheses about interaction of relative supply and relative wages (Katz and Murphy, 1992).
-When we compare similar plots using ILO employment categories \ref{wage_changes_ilo} and \ref{employ_changes_ilo} we again do not find a unified picture among the regions. The Figure \ref{employ_changes_ilo} allows us a basic comparison with trends both US and Western Europe where we, in line with the job polarization hypothesis, find high and low-education occupation growing at the expense of the middle-education occupations such as assemblers or clerks (Acemoglu and Autor, 2011). We see similar behavior for Baltic states with Managers and Professions growing in the relative employment share together with Elementary occupations at the other side of the spectrum. But in the two remaining regions the evidence seems to be less straightforward. Looking at the situation for wages in Figure \ref{wage_changes_ilo}, we can again spot frequent movement of wages and employment in opposite direction. From the particular results, one can note a strong performance of Machine operators in case of Central Europe (rather middle-educated, potentially routine and therefore offshorable occupations), result especially contrasting with the Balkan economies.
+Figures \ref{wage_changes_nace} and \ref{employ_changes_nace} show the relative changes in NACE classification of economic activities. We can note especially strong growth of wages in manufacturing and construction in central European countries  - this seems to be in line with a strong position of these countries in the European manufacturing core (Stöllinger, 2016). On the other hand - key public sectors are falling behind in this region. We see a strong performance of Finance in Baltic countries. In Romania and Bulgaria, the public sectors are on the other hand rising. Figure \ref{employ_changes_nace} then documents that changes in relative wage in the NACE categories are often associated with moves in relative employment in an opposite direction (see Construction in Central Europe or Finance in the Baltics). This seems be in line in one of the fundamental hypotheses about interaction of relative supply and relative wages (Katz and Murphy, 1992).
+When we compare similar plots using major ILO employment categories \ref{wage_changes_ilo} and \ref{employ_changes_ilo} we again do not find a unified picture among the regions. The Figure \ref{employ_changes_ilo} allows us a basic comparison with trends both US and Western Europe where we, in line with the job polarization hypothesis, find high and low-education occupation growing at the expense of the middle-education occupations such as assemblers or clerks (Acemoglu and Autor, 2011). We see similar behavior for Baltic states with Managers and Professions growing in the relative employment share together with Elementary occupations at the other side of the spectrum. But in the two remaining regions there is little suggesting validity of this hypothesis - note a strong performance of machine operators in case of Central Europe. Looking at the situation for wages in Figure \ref{wage_changes_ilo}, we can again spot a frequent movement of wages and employment in opposite direction. From the particular results, one can note a strong performance of Machine operators in case of Central Europe (rather middle-educated, potentially routine and therefore offshorable occupations), result especially contrasting with the Balkan economies.
 
 In sum, our descriptive analysis has shown differences of CEE labour markets with respect to the stylized facts found in the developed countries - in particular we do not confirm either job or wage polarization in CEE and we never see a monotonic rise in inequality similar to certain periods of the US development. Yet, at the same time there is rather diversified behaviour between the investigated regions themselves. In general, we can contrast generally declining measures of inequality in the the Central European countries to mostly stagnating situation in the Baltic and signs of an increasing inequality in case of the Balkan countries.
 % TODO: this is really a stump, expand on it
@@ -159,18 +161,18 @@ Our results so far, despite bringing interesting view of the economies, do not t
 \subsection{Elasticity of substitution estimation}
 % Panel Regression
 % Main variables
-In the next part we get to the crucial part of the canonical model doctrine - (presumably) negative relationship between relative labour supply and relative wages. As can be seen in the plots \ref{agg_labour_supplies} and \ref{agg_high_low_log_wage_gap} a rising tendency in relative high-skill supply rise across CEE on one hand (as high skill category we define individuals with the highest ISCED education level attained greater or equal to 5). On the other hand decline in university/college wage premium can be seen in case of the Central Europe, however the Baltics show rather volatile development with pronounced increase in the premium after 2008 and downward trend afterward. Balkan countries experience a sharp rise in the premium after 2015. These results thus confirm some of the conclusions from the descriptive part. 
+In the next part we get to the crucial part of the canonical model doctrine - (presumably) negative relationship between relative labour supply and relative wages. As can be seen in the plots \ref{agg_labour_supplies} and \ref{agg_high_low_log_wage_gap} there is a rising tendency in relative high-skill supply across CEE on one hand (as high skill category we define individuals with the highest ISCED education level attained greater or equal to 5). On the other hand decline in university/college wage premium can be seen in case of the Central Europe, however the Baltics show rather volatile development with pronounced increase in the premium after 2008 and downward trend afterward. Balkan countries experience a sharp rise in the premium after 2015. These results thus confirm some of the conclusions from the descriptive part. 
 The negative correlation between the variables - expected by the theory seems to be evident for the Visegrad but not outside of it. If we, following Acemoglu (2012), de-trend the series as can be visible in Figure \ref{agg_km_vars_detrended} this negative relationship disappears - correlation for all regions as well as countries (Fig \ref{km_vars_detrended} in the Appendix) is actually positive. This is a contrasting result to the US in Acemoglu (2012). The only difference are actually Romania and Bulgaria.
 We now take a look at the panel regression for years 2005-2019 to further check if this relationship is statistically significant.\\
 % TODO - maybe comment on separate countries???
 %%%% Regression results
-Following key works in the field such as Katz and Murphy (1992) or Acemoglu (2012), we perform \ref{eqn:STBC_regression} separately for each country - the results confirm the conclusions of the detrended series analysis above - the estimates are insignificant with the exception of Romania and Bulgaria that have significantly negative coefficients with magnitude suggesting higher elasticity than in the US case (-0.27 and -0.34 respectively)  \footnote{We have also done this exercise for the regional groups - elasticities are again insignificant except for the Balkans}. % TODO present the results, maybe put here some comment from Havranek
+Following key works in the field such as Katz and Murphy (1992) or Acemoglu (2012), we perform \ref{eqn:STBC_regression} separately for each country - the results confirm the conclusions of the detrended series analysis above - the estimates are insignificant with the exception of Romania and Bulgaria that have significantly negative coefficients with magnitude suggesting higher elasticity than in the US case (-0.27 and -0.34 respectively)  \footnote{We have also done this exercise for the regional groups - elasticities are again insignificant except for the Balkans}.
 However, as the regressions above work with short time series we decided to utilize panel regression.
-In tabls \ref{panel_regression_comparison} we see the regression results of several regression specifications coming from the basic regression design proposed by Katz and Murphy (1992) in the form of equation \ref{eqn:STBC_regression}, we also add  other explanatory variables inspired by research on determinants of labour market inequality. This regression equation has been used extensively, in studies predominantly concentrated on developed economies in last decades (Havranek et al., 2021) and thus is a good basis for comparison. As suggested by Farber (2018), we added union density for each year as a measure of labour market conditions, we also added average minimum wage in each of the countries.\\
-The H/L parameter in table \ref{panel_regression_comparison} can be interpreted as an elasticity of substitution between high and low skilled workers and is therefore of a primary interest . The Random effect model also contains time trend parameter is interpreted as an annual change in relative high skill demand caused by technological change.
+In tabls \ref{panel_regression_comparison} we see the regression results of several regression specifications coming from the basic regression design proposed by Katz and Murphy (1992) in the form of equation \ref{eqn:STBC_regression}, we also add  other explanatory variables inspired by research on determinants of labour market inequality. This regression equation has been used extensively, in studies predominantly concentrated on developed economies in last decades (Havranek et al., 2021) and thus is a good basis for comparison. As suggested by Farber (2018), we added union density for each year and average minimum wage in each of the countries as a measures of labour market conditions.\\
+The H/L parameter in table \ref{panel_regression_comparison} can be interpreted as an elasticity of substitution between high and low skilled workers and is therefore of a primary interest . The Random effect model also contains time trend parameter is interpreted as an annual change in relative high skill demand caused by technological change. \footnote{We estimate the equation in form of a university (college) education as definition of high skill vs. the rest, Table 2 represents another common specification - where we compare university and high school is in the appendix Table \ref{panel_regression_comparison_high_school} }
 
 
-The results show that the relative supply coefficient is negative and significant and between (-0.2 and -0.1) this implies elasticity of substitution around 5 or 10 \footnote{We also performed Hausmann test in order to choose prefered model variant, with p-value 0.04551 (for the model including Union density variable) we reject the null hypothesis of RE model.}. The key result is thus that according to these results high and low skill labour are gross substitutes. As Havranek (2020) notes, this implies that high and low skilled workers are relatively interchangeable and crucially, increase in supply of high skill workers decreases demand for the low-skilled ones. The results also suggest significantly higher elasticity of substitution in the CEE compared to the US and German case (Acemoglu, 2012; Glitz and Wissmann, 2021) and at the same time significantly lower pace of technological change. This result could be in line with findings of previous literature such as (Arend and Grabowski, 2019 and Hardy et al., 2018) - who notes significant educational upgrading in the region together with high demand for routine (even though cognitive) jobs in result of CEE being and offshoring destination. This may be the creating excessive supply high-skilled population that is subsequently being pushed into less high-skilled occupations - resulting in a higher substitutibility.
+The results show that the relative supply coefficient is negative and significant and between (-0.2 and -0.1) as this coefficient represents a negative inverse of the elasticity $\gamma$, we get an elasticity of substitution around 5 or 10 \footnote{We also performed Hausmann test in order to choose prefered model variant, with p-value 0.04551 (for the model including Union density variable) we reject the null hypothesis of RE model.}. The key result is thus that according to these results high and low skill labour are gross substitutes. As Havranek (2020) notes, this implies that high and low skilled workers are relatively interchangeable and crucially, increase in supply of high skill workers decreases demand for the low-skilled ones. The results also suggest significantly higher elasticity of substitution in the CEE compared to the US and German case (Acemoglu, 2012; Glitz and Wissmann, 2021) and at the same time significantly lower pace of technological change. This result could be in line with findings of previous literature such as (Arend and Grabowski, 2019 and Hardy et al., 2018) - who notes significant educational upgrading in the region together with high demand for routine (even though cognitive) jobs in result of CEE being and offshoring destination. This may be the creating excessive supply high-skilled population that is subsequently being pushed into less high-skilled occupations - resulting in a higher substitutability.
 %However, the in many model specifications the the coefficients are insignificant or even positive. This results, contrast with expectations given from the theory -that implies non-negativity of the estimates, as well as many empirical studies (Katz and Murphy has ... for the US), yet seem to be in line with tendency of the literature to present upward biased estimates (Havranek et al., 2021).
 
 Also note that technological change seems to have negative sign despite a miniscule magnitude, this would imply that technological change has an equalizing effect (decrease in skill premium) in CEE.
@@ -178,6 +180,32 @@ Also note that technological change seems to have negative sign despite a minisc
 Overall, we can identify a marked difference of the observed basic labour market patterns in the CEE compared to US and German evidence (and we can probably say Western experience in general) that to bigger or lesser degree experienced and job and wage polarization. We do not confirm such a phenomenon in the CEE and rather see strengthening of the middle and bottom part of the distribution compared to the highest quantiles.
 
 \section{Conclusion}
+We investigate CEE labour markets during almost entire period of the countries' EU membership using EU-SILC micro survey data in order to check a key labour market hypotheses found in the developed economies - Skill Bias technological change (SBTC) and its newer Routine Bias variant (RBTC). The descriptive part of the paper gives emphasis to so-called job and wage polarization, a key findings of the literature, leading to formulation of the RBTC. Moreover, we attempt to complement the literature on labour market inequality in the set of countries which are at the same time closely linked with the developed economies for which the inequality is usually measured but at the same time having very different position in the labour market chains. We find the EU-SILC dataset a good option for emulation key STBC literature such as Katz and Murphy (1992) in the CEE context and at the same time relatively little used in the dataset in the context of inequality estimation.\\
+Our findings in the descriptive part of the paper do not speak for a polarization either in terms of wages or occupation - most importantly, the characteristic U-shaped curve found in the literature centered around the US is absent in the figures presented above.
+
+Especially in case of the Central European countries we see a monotonic equalizing behaviour, confirmed in all our measures. Such behaviour resembles much more an inverted version of the monotonic behaviour found in the US in 1980s. There seems to be no particular reason to adopt the routine based technological hypothesis, instead of SBTC in the context of these countries. 
+
+We also estimated elasticity of substitution using estimates of skill premium of tertiary educated and their relative labour supply. We used a procedure developed by Katz and Murphy (1992) in a panel model framework in order to limit the impact of limited number of observations for individual countries. Our estimates suggest that in the CEE region the elasticity of substitution is between 5 and 10 and is thus higher than in case of the US. % TODO: up to our knowledge, such estimates were not yet estimate in the context of CEE
+
+This work reaches two general conclusions, first for most countries we confirm the findings of previous literature that the labour market can be seen as equalizing. This seems to be in contrast with the main Western experience in recent decades where the labour market and middle class squeeze seem to be a key element of the populist drive. These phenomena are manifested in labour market polarization in the West (Rodrik and Stantcheva, 2020; Temin, 2018) and in decline in Western the middle class relative position on a world scale (Milanovic, 2020).
+Second, there is a difference among the countries investigated as well embodied by a recent rise in inequality happening the in the two Balkan countries. The phenomenon is to certain extent puzzling and demands further investigation, on the other hand seems to be driven rather by a single country and on should also bear in mind that these countries are significantly different in terms of their macroeconomic performance than the rest of the sample.
+\\
+Equalizing and generally pro-worker and pro-median situation on the labour market seem to confirm our assumption that CEE and the West are on different sides of the globalization dividing line. Yet this finding also brings a certain puzzle, as these countries experience their own populist surge with the populist parties vote share tripling between 2000 and 2017 and the parties participating or leading the government in many of the region's countries (Orenstein and Bugarič, 2022). The authors also note similarities between the populist agenda in the old EU countries and the CEE. However, sources of these political tendencies seem to be rather different as in the case of CEE they seem to be happening in spite of development of labour market rather than as a consequence and thus offers an opportunity for further investigation of material causes of the general dissatisfaction in the region and therefore further dimensions of inequality.
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
 
 \section{References}
 \begin{enumerate}
@@ -235,7 +263,23 @@ Overall, we can identify a marked difference of the observed basic labour market
 
 \item OECD (2019), Negotiating Our Way Up: Collective Bargaining in a Changing World of Work
 
+\item Orenstein, Mitchell A., and Bojan Bugarič. "Work, family, fatherland: The political economy of populism in central and Eastern Europe." Journal of European Public Policy 29.2 (2022): 176-195.
+
 \item Stöllinger, Roman. "Structural change and global value chains in the EU." Empirica 43.4 (2016): 801-829.
+
+\item Temin, Peter. The Vanishing Middle Class, new epilogue: Prejudice and Power in a Dual Economy. MIT press, 2018.
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{enumerate}
 \section{Tables and Figures}
@@ -243,70 +287,98 @@ Overall, we can identify a marked difference of the observed basic labour market
 
 \begin{figure}[!htbp]%
     \centering
-    {\includegraphics[scale = 0.45]{wage_gaps_agg.png} }
+    \caption{Minimal Wages against the lowest percentiles}
+    {\includegraphics[scale=0.6]{agg_min_wages.png} }
+    \label{low_deciles_vs_min_w}
+    \caption*{Deciles of monthly log wages of full-time workers. The minimun wage statistic is obtained from Eurostat, rest is calculated from the EU-SILC survey data.}
+\end{figure}
+
+\begin{figure}[!htbp]%
+    \centering
+    \caption{Mean Wages against the highest percentiles}
+    {\includegraphics[scale=0.6]{agg_high_deciles_against_mean.png} }
+    \label{high_deciles_vs_meam_w}
+    \caption*{Deciles of monthly log wages of full-time workers. The average wage statistic is obtained from Eurostat, rest is calculated from the EU-SILC survey data.}
+\end{figure}
+
+
+
+\begin{figure}[!htbp]%
+    \centering
     \caption{Development of (log) wage gaps for fulltime workers in CEE aggregate to regional blocks,  2005–2019}
+    {\includegraphics[scale = 0.45]{wage_gaps_agg.png} }
     \label{agg_wage_gaps_CEE}
+    \caption*{Development of ratios of different deciles of log monthly wage distribution for full-time workers. }
 \end{figure}
 
 
 
 \begin{figure}[!htbp]%
     \centering
+    \caption{Changes in Log Wages by Percentile Relative to the Median (2011-2019}
     {\includegraphics[scale=0.5]{agg_wage_changes_percentiles_11_19.png} }
-    \caption{Changes in Log Hourly Wages by Percentile Relative to the Median (2011-2019}
     \label{agg_wage_changes_percentiles_11_19}
+    \caption*{The figure shows how given percentile of log monthly wage distribution changed relative to median between 2011 and 2019. }
 \end{figure}
 
 
 \begin{figure}[!htbp]%
     \centering
+    \caption{Changes in employment by occupational skill percentile, 2011–2019}
     {\includegraphics[scale=0.5]{agg_employ_changes_percentiles.png} }
-    \caption{Changes in employment by occupational skill percentile, 2011–2019. Mean log-wage in 2011 was used for obtaining the occupation skill rank}
     \label{agg_employ_changes_percentiles}
+    \caption*{The vertical axis depicts a change of employment in each occupational percentile as a share of total employment in given region. The occupations are ranked by skill percentiles obtained using employment weighted mean log wage for each occupation in 2011. }
 \end{figure}
+
 
 \begin{figure}[!htbp]%
 \centering
-    {\includegraphics[scale=0.5]{employ_changes_nace.png} }
-    \caption{Employment changes between 2011-2019 by NACE category}
-\label{employ_changes_nace}
-\end{figure}
-
-\begin{figure}[!htbp]%
-\centering
-    {\includegraphics[scale=0.5]{wage_changes_nace.png} }
     \caption{Changes in log wages relative to median by NACE category (2011-2019)}
+    {\includegraphics[scale=0.5]{wage_changes_nace.png} }
+    \caption*{The Figure shows changes in full-time workers' log wages relative to median wage in different NACE Rev. 2 categories (sections) of economic activity.}
 \label{wage_changes_nace}
-\end{figure}
-
-\begin{figure}[!htbp]%
-\centering
-    {\includegraphics[scale=0.5]{employ_changes_ilo.png} }
-    \caption{Employment changes between 2011-2019 by ILO major category}
-\label{employ_changes_ilo}
 \end{figure}
 
 %Figure 8
 \begin{figure}[!htbp]%
 \centering
-    {\includegraphics[scale=0.5]{wage_changes_ilo.png} }
     \caption{Changes in log wages relative to median by ILO major category (2011-2019)}
+    {\includegraphics[scale=0.5]{wage_changes_ilo.png} }
+    \caption*{The Figure shows changes in full-time workers' log wages relative to median wage with occupations grouped to ISCO-08 major groups (the names are shortened to fit the Plot)}
 \label{wage_changes_ilo}
 \end{figure}
 
-% Figure 9
+
 \begin{figure}[!htbp]%
-    \centering
-    {\includegraphics[scale=0.6]{agg_high_low_log_wage_gap.png} }
-    \caption{Changes in composition adjusted high/low-skill log wage premium}
-    \label{agg_high_low_log_wage_gap}
+\centering
+    \caption{Employment share changes between 2011-2019 by NACE category}
+    {\includegraphics[scale=0.5]{employ_changes_nace.png} }
+    \caption*{The Figure shows changes in labour supply (using hours worked) shares of different NACE Rev. 2 categories in total labour supply.}
+\label{employ_changes_nace}
+\end{figure}
+
+\begin{figure}[!htbp]%
+\centering
+    \caption{Employment share changes between 2011-2019 by ILO major category}
+    {\includegraphics[scale=0.5]{employ_changes_ilo.png} }
+    \caption*{Changes in different ISCO-08 major groups' shares in total labour supply (measured in hours worked)}
+\label{employ_changes_ilo}
 \end{figure}
 
 
+% Figure 10
 \begin{figure}[!htbp]%
     \centering
-    {\includegraphics[scale=0.6]{agg_labour_supplies.png} }
+    \caption{Changes in composition adjusted high/low-skill log wage premium}
+    {\includegraphics[scale=0.55]{agg_high_low_log_wage_gap.png} }
+    \label{agg_high_low_log_wage_gap}
+\end{figure}
+
+% Figure 11
+\begin{figure}[!htbp]%
+    \centering
     \caption{Changes in relative high/low skill labour supply}
+    {\includegraphics[scale=0.55]{agg_labour_supplies.png} }
     \label{agg_labour_supplies}
 \end{figure}
 
@@ -320,25 +392,13 @@ Overall, we can identify a marked difference of the observed basic labour market
 
 
 
-\begin{figure}[!htbp]%
-    \centering
-    {\includegraphics[scale=0.6]{agg_min_wages.png} }
-    \caption{Minimal Wages against the lowest percentiles}
-    \label{low_deciles_vs_min_w}
-\end{figure}
 
-\begin{figure}[!htbp]%
-    \centering
-    {\includegraphics[scale=0.6]{agg_high_deciles_against_mean.png} }
-    \caption{Mean Wages against the highest percentiles}
-    \label{high_deciles_vs_meam_w}
-\end{figure}
 
 
 % Aggregate - Table 1
 \begin{table}[!htbp]
 \centering 
-\caption{Changes of real wages for different groups of countries. The table depicts a log changes in real weekly wages of full-time workers for specified periods. The wages are defined using the sex-education-experience groups defined above, the aggregate categories displayed are then weighted average of relevant groups using average employment shares of given group over the entire sample period as weight}
+\caption{Changes in real wages for different groups of countries}
 \label{real_wage_changes_agg}
 \begin{center}
 \resizebox{\textwidth}{!}{
@@ -346,32 +406,33 @@ Overall, we can identify a marked difference of the observed basic labour market
 
 \begin{tabular}{lrrrrrr}
 \toprule
-{} &     Ro+Bu &     Ro+Bu &   Central Europe &   Central Europe &     Baltic &     Baltic \\
+{} &     RO \& BG &     RO \& BG &   Cent. Europe &   Cent. Europe &     Baltics &     Baltics \\
 {} &  2010/2007 &  2019/2011 &  2010/2007 &  2019/2011 &  2010/2007 &  2019/2011 \\
 %country\_group &     balkan &     balkan &   visegrad &   visegrad &     baltic &     baltic \\
 Groups                                &            &            &            &            &            &            \\
 \midrule
-%(upper) secondary education           &   9.345806 &  59.931305 &  11.642997 &  13.936923 &  10.444225 &  35.929474 \\
-$<$5                                    &  14.797624 &  65.137344 &   7.185108 &   7.891582 &  -2.950337 &  36.497808 \\
-5-15                                  &   7.971447 &  63.154173 &   9.118209 &  -0.975471 &  13.526565 &  31.962220 \\
-15-25                                 &   8.862724 &  66.525961 &   9.272641 &   4.759290 &  16.791721 &  37.971652 \\
-25-35                                 &   8.086467 &  58.721456 &   9.602545 &   0.797051 &  20.272556 &  33.163872 \\
-35-45                                 &   4.723792 &  61.367711 &   9.641290 &   0.610153 &  18.121019 &  28.695666 \\
-%5-15                                  &   7.971447 &  63.154173 &   9.118209 &  -0.975471 &  13.526565 &  31.962220 \\
-%$<$5                                    &  14.797624 &  65.137344 &   7.185108 &   7.891582 &  -2.950337 &  36.497808 \\
-$>$45                                   & -76.867792 &  86.427481 &  22.566759 &  -1.274856 &  21.462457 &  33.994379 \\
-Female                                &   8.142511 &  66.488347 &   7.900273 &   2.301673 &  16.894605 &  32.871068 \\
-Male                                  &   8.070425 &  60.904215 &   9.890782 &   2.572075 &  10.693629 &  35.108801 \\
-primary education                     &   4.736836 &  69.037100 &   1.191744 & -50.229431 &  18.815427 &  75.794649 \\
-lower secondary education             &   1.236062 &  55.677731 &  13.769496 &  16.239395 &   6.002626 &  27.930662 \\
-(upper) secondary education           &   9.345806 &  59.931305 &  11.642997 &  13.936923 &  10.444225 &  35.929474 \\
-post-secondary non tertiary education &   6.265056 &  77.476501 &   9.534267 &   2.034679 &  16.617963 &  31.882166 \\
-%primary education                     &   4.736836 &  69.037100 &   1.191744 & -50.229431 &  18.815427 &  75.794649 \\
-tertiary education                    &   8.404465 &  65.094797 &   7.724367 &  -4.659190 &  14.562024 &  34.033161 \\
+%(upper) secondary education           &   9.310017 &  59.969078 &  11.661339 &  13.946453 &  10.444225 &  35.929474 \\
+$<$5                                    &  14.581693 &  65.260985 &   7.309054 &   8.120131 &  -2.965103 &  36.511753 \\
+5-15                                  &   7.861526 &  63.277764 &   9.162507 &  -0.852100 &  13.541349 &  31.962220 \\
+15-25                                 &   8.865883 &  66.529665 &   9.287660 &   7.086426 &  16.848990 &  38.034179 \\
+25-35                                 &   8.085102 &  58.722765 &   9.636790 &   0.469503 &  20.252799 &  33.171526 \\
+35-45                                 &   5.013863 &  61.656307 &   9.998737 &   2.844017 &  18.044866 &  28.720680 \\
+%5-15                                  &   7.861526 &  63.277764 &   9.162507 &  -0.852100 &  13.541349 &  31.962220 \\
+%<5                                    &  14.581693 &  65.260985 &   7.309054 &   8.120131 &  -2.965103 &  36.511753 \\
+$>$45                                   & -64.982239 &  91.008855 &   1.551521 &   3.060651 &  20.611585 &  35.019766 \\
+Female                                &   8.017022 &  66.750833 &   7.859075 &   2.333832 &  16.875744 &  32.899632 \\
+Male                                  &   8.006975 &  60.959955 &   9.803801 &   4.163552 &  10.660589 &  35.193105 \\
+primary education                     &   2.588869 &  70.827861 &  -4.752946 & -45.600881 &  23.304905 &  70.928672 \\
+lower secondary education             &   1.118504 &  55.677731 &  13.446450 &  15.638981 &   6.002626 &  27.930662 \\
+(upper) secondary education           &   9.310017 &  59.969078 &  11.661339 &  13.946453 &  10.444225 &  35.929474 \\
+post-secondary non tertiary education &   5.591391 &  77.938633 &   9.465074 &   2.105854 &  16.559132 &  32.032608 \\
+%primary education                     &   2.588869 &  70.827861 &  -4.752946 & -45.600881 &  23.304905 &  70.928672 \\
+tertiary education                    &   8.442430 &  65.136792 &   7.749198 &  -5.664850 &  14.562024 &  34.033161 \\
 \bottomrule
 \end{tabular}
 
 }
+\caption*{The table depicts log changes in real monthly wages of full-time workers between given years. We use mean wages of the sex-education-experience groups in given region defined above. The aggregate categories displayed are then weighted average of relevant groups using average employment shares of given group over the entire sample period as weight. We calculate the real wages by deflating nominal wages in each period by the country's Harmonised index of consumer prices obtained from Eurostat. For broader regional groups (as displayed above) we calculate a cell's mean wage as an average of respective countries' value for that cell. }
 \end{center}
 \end{table}
 
@@ -381,7 +442,7 @@ tertiary education                    &   8.404465 &  65.094797 &   7.724367 &  
 % TODO - rows ordering
 \begin{table}[!htbp]
 \centering 
-\caption{Changes of labour supply for different groups of countries. The table presents log changes in the share of total labour supply provided by given group in the specified period. The labour supply is measured in the efficiency units.}
+\caption{Changes of labour supply for different groups of countries.}
 \label{labour_supply_changes_agg}
 \begin{center}
 \resizebox{\textwidth}{!}{
@@ -414,11 +475,12 @@ tertiary education                    &   8.452129 &  10.272401 &  11.712725 &  
 \end{tabular}
 
 }
+\caption*{ The table presents log changes in the share of total labour supply provided by given group in the specified period. The labour supply is measured in the efficiency units.}
 \end{center}
 \end{table}
 
 
-
+% Table 3 - comparing panel regressions
 \begin{table}[!htbp]
 \centering 
 \caption{Panel Regression Comparison - clustered standard errors reported}
@@ -428,56 +490,43 @@ tertiary education                    &   8.452129 &  10.272401 &  11.712725 &  
 
 
 
-\begin{tabular}{lccccccc}
+\begin{tabular}{lccccc}
 \toprule
-                                 & \textbf{FE - entity effects} & \textbf{FE- time effects inc.} & \textbf{FE - UD} &    \textbf{RE}    & \textbf{RE - entity} &  \textbf{RE - UD} & \textbf{RE - UD2}  \\
+                                 & \textbf{FE} & \textbf{FE} & \textbf{FE} &    \textbf{RE}    &  \textbf{RE}  \\
 \midrule
-\textbf{Dep. Variable}           &           logW\_HL           &            logW\_HL            &     logW\_HL     &      logW\_HL     &       logW\_HL       &      logW\_HL     &      logW\_HL      \\
-\textbf{Estimator}               &           PanelOLS           &            PanelOLS            &     PanelOLS     &   RandomEffects   &    RandomEffects     &   RandomEffects   &   RandomEffects    \\
-\textbf{No. Observations}        &             144              &              144               &       144        &        144        &         144          &        144        &        144         \\
-\textbf{Cov. Est.}               &          Clustered           &           Clustered            &    Clustered     &     Clustered     &      Clustered       &     Clustered     &     Clustered      \\
-\textbf{R-squared}               &            0.3370            &             0.0836             &      0.1608      &       0.3150      &        0.6952        &       0.3689      &       0.7174       \\
-\textbf{R-Squared (Within)}      &            0.3370            &             0.3365             &      0.3614      &       0.3366      &        0.3416        &       0.3838      &       0.3897       \\
-\textbf{R-Squared (Between)}     &            0.3271            &             0.3375             &      0.8437      &      -0.3251      &        1.0000        &      -0.1149      &       1.0000       \\
-\textbf{R-Squared (Overall)}     &            0.3262            &             0.3362             &      0.8307      &      -0.0177      &        0.6952        &       0.1183      &       0.7174       \\
-\textbf{F-statistic}             &            67.617            &             10.861             &      7.4737      &       32.422      &        27.366        &       20.314      &       25.392       \\
-\textbf{P-value (F-stat)}        &            0.0000            &             0.0013             &      0.0001      &       0.0000      &        0.0000        &       0.0000      &       0.0000       \\
-\textbf{=====================}   &         ===========          &          ===========           &   ===========    &  ===============  &   ===============    &  ===============  &  ===============   \\
-\textbf{log(H\_L)}               &           -0.2198            &            -0.2285             &     -0.1937      &      -0.1086      &       -0.1685        &      -0.0511      &      -0.1115       \\
-\textbf{ }                       &          (-3.6296)           &           (-2.1611)            &    (-1.8663)     &     (-1.6910)     &      (-2.2977)       &     (-0.8928)     &     (-1.6384)      \\
-\textbf{UD}                      &                              &                                &      0.0102      &                   &                      &       0.0092      &       0.0098       \\
-\textbf{ }                       &                              &                                &     (1.7155)     &                   &                      &      (2.2486)     &      (1.7258)      \\
-\textbf{min\_wage}               &                              &                                &      0.0003      &                   &                      &     2.724e-05     &      5.58e-05      \\
-\textbf{ }                       &                              &                                &     (0.8571)     &                   &                      &      (0.1870)     &      (0.2645)      \\
-\textbf{trend}                   &                              &                                &                  &      -0.0057      &       -0.0029        &      -0.0031      &      -0.0006       \\
-\textbf{ }                       &                              &                                &                  &     (-1.0212)     &      (-0.4728)       &     (-0.4082)     &     (-0.0555)      \\
-\textbf{const}                   &                              &                                &                  &       0.4819      &        0.3871        &       0.3401      &       0.2467       \\
-\textbf{ }                       &                              &                                &                  &      (5.6607)     &       (4.2619)       &      (3.3670)     &      (1.9107)      \\
-\textbf{Country.CZ}              &                              &                                &                  &                   &       -0.0265        &                   &      -0.0157       \\
-\textbf{ }                       &                              &                                &                  &                   &      (-1.2582)       &                   &     (-0.7569)      \\
-\textbf{Country.EE}              &                              &                                &                  &                   &        0.0010        &                   &       0.0447       \\
-\textbf{ }                       &                              &                                &                  &                   &       (0.0431)       &                   &      (0.6113)      \\
-\textbf{Country.HU}              &                              &                                &                  &                   &        0.1514        &                   &       0.1664       \\
-\textbf{ }                       &                              &                                &                  &                   &       (4.4663)       &                   &      (3.1447)      \\
-\textbf{Country.LT}              &                              &                                &                  &                   &        0.1589        &                   &       0.1760       \\
-\textbf{ }                       &                              &                                &                  &                   &       (3.6748)       &                   &      (2.6030)      \\
-\textbf{Country.LV}              &                              &                                &                  &                   &        0.1765        &                   &       0.1540       \\
-\textbf{ }                       &                              &                                &                  &                   &       (18.105)       &                   &      (3.3028)      \\
-\textbf{Country.PL}              &                              &                                &                  &                   &       -0.0270        &                   &      -0.0512       \\
-\textbf{ }                       &                              &                                &                  &                   &      (-0.6965)       &                   &     (-0.8000)      \\
-\textbf{Country.RO}              &                              &                                &                  &                   &        0.0361        &                   &      -0.0416       \\
-\textbf{ }                       &                              &                                &                  &                   &       (0.9983)       &                   &     (-0.7801)      \\
-\textbf{Country.SI}              &                              &                                &                  &                   &        0.1628        &                   &       0.0014       \\
-\textbf{ }                       &                              &                                &                  &                   &       (5.7925)       &                   &      (0.0095)      \\
-\textbf{Country.SK}              &                              &                                &                  &                   &       -0.1817        &                   &      -0.1726       \\
-\textbf{ }                       &                              &                                &                  &                   &      (-6.8356)       &                   &     (-7.1373)      \\
-\textbf{=======================} &        =============         &         =============          &  =============   & ================= &  =================   & ================= & =================  \\
-\textbf{Effects}                 &            Entity            &             Entity             &      Entity      &                   &                      &                   &                    \\
+\textbf{Dependent variable}           &           skill premium           &            skill premium           &     skill premium     &      skill premium     &      skill premium      \\
+%\textbf{Estimator}               &           PanelOLS           &            PanelOLS            &     PanelOLS     &   RandomEffects   &   RandomEffects    \\
+%\textbf{No. Observations}        &             144              &              144               &       144        &        144        &        144         \\
+%\textbf{Cov. Est.}               &          Clustered           &           Clustered            &    Clustered     &     Clustered     &     Clustered      \\
+%\textbf{R-squared}               &            0.3370            &             0.0836             &      0.1659      &       0.3150      &       0.3764       \\
+%\textbf{R-Squared (Within)}      &            0.3370            &             0.3365             &      0.3933      &       0.3366      &       0.3991       \\
+%\textbf{R-Squared (Between)}     &            0.3271            &             0.3375             &      0.8656      &      -0.3251      &      -0.3136       \\
+%\textbf{R-Squared (Overall)}     &            0.3262            &             0.3362             &      0.8523      &      -0.0177      &       0.0167       \\
+%\textbf{F-statistic}             &            67.617            &             10.861             &      5.7679      &       32.422      &       16.659       \\
+%\textbf{P-value (F-stat)}        &            0.0000            &             0.0013             &      0.0003      &       0.0000      &       0.0000       \\
+\textbf{=====================}   &         ===========          &          ===========           &   ===========    &  ===============  &  ===============   \\
+\textbf{Relative supply}               &           -0.2198            &            -0.2285             &     -0.1783      &      -0.1086      &      -0.0927       \\
+\textbf{ }                       &          (-3.6296)           &           (-2.1611)            &    (-1.9811)     &     (-1.6910)     &     (-1.0116)      \\
+\textbf{Union density}                      &                              &                                &      0.0082      &                   &       0.0084       \\
+\textbf{ }                       &                              &                                &     (1.3967)     &                   &      (1.8800)      \\
+\textbf{Min. wage}               &                              &                                &      0.0002      &                   &     6.517e-05      \\
+\textbf{ }                       &                              &                                &     (1.4829)     &                   &      (0.4416)      \\
+\textbf{Unemp. rate}             &                              &                                &      0.0078      &                   &       0.0050       \\
+\textbf{ }                       &                              &                                &     (1.8626)     &                   &      (1.2477)      \\
+\textbf{Trend}                   &                              &                                &                  &      -0.0057      &      -0.0017       \\
+\textbf{ }                       &                              &                                &                  &     (-1.0212)     &     (-0.2188)      \\
+\textbf{Constant}                   &                              &                                &                  &       0.4819      &       0.2824       \\
+\textbf{ }                       &                              &                                &                  &      (5.6607)     &      (2.7137)      \\
+\textbf{=======================} &        =============         &         =============          &  =============   & ================= & =================  \\
+\textbf{Observations}        &             144              &              144               &       144        &        144        &        144         \\
+\textbf{Country effects}                 &            Yes           &             Yes             &      Yes      &    No               &         No         \\
+\textbf{Time effects}                 &            No           &             Yes             &      No      &    No               &         No         \\
+\textbf{Cov. Est.}               &          Clustered           &           Clustered            &    Clustered     &     Clustered     &     Clustered      \\
+\textbf{R$^{2}$}               &            0.3370            &             0.0836             &      0.1659      &       0.3150      &       0.3764       \\
 \bottomrule
 \end{tabular}
-
 }
-%\caption{Model Comparison}
+\caption*{Clustered t-statistics in parentheses}
 \end{center}
 \end{table}
 
@@ -498,7 +547,7 @@ tertiary education                    &   8.452129 &  10.272401 &  11.712725 &  
 
 \begin{figure}[!htbp]%
     \centering
-    {\includegraphics[scale=0.5]{agg_wage_changes_percentiles.png} }
+    {\includegraphics[scale=0.45]{agg_wage_changes_percentiles.png} }
     \caption{Changes in Log Hourly Wages by Percentile Relative to the Median (2007-2019}
     \label{agg_wage_changes_percentiles}
 \end{figure}
@@ -507,36 +556,56 @@ tertiary education                    &   8.452129 &  10.272401 &  11.712725 &  
 
 \begin{figure}[!htbp]%
     \centering
-    {\includegraphics[scale = 0.45]{wage_gaps.png} }
+    \caption{Minimal Wages against the lowest percentiles}
+    {\includegraphics[scale=0.45]{min_wages_cee.png} }
+    \label{low_deciles_vs_min_w_cee}
+    \caption*{Deciles of monthly log wages of full-time workers. The minimun wage statistic is obtained from Eurostat, rest is calculated from the EU-SILC survey data - individual countries}
+\end{figure}
+
+
+\begin{figure}[!htbp]%
+    \centering
+    \caption{Mean Wages against the highest percentiles}
+    {\includegraphics[scale=0.45]{high_deciles_against_mean.png} }
+    \label{high_deciles_vs_meam_w_cee}
+    \caption*{Deciles of monthly log wages of full-time workers. The average wage statistic is obtained from Eurostat, rest is calculated from the EU-SILC survey data - individual countries.}
+\end{figure}
+
+
+
+
+\begin{figure}[!htbp]%
+    \centering
     \caption{Development of (log) wage gaps for fulltime workers in CEE, 2005–2019}
+    {\includegraphics[scale = 0.45]{wage_gaps.png} }
     \label{wage_gaps_CEE}
 \end{figure}
 
 \begin{figure}[!htbp]%
     \centering
-    {\includegraphics[scale=0.5]{wage_changes_by_percentiles.png} }
-    \caption{Changes in Log Hourly Wages by Percentile Relative to the Median}
+    \caption{Changes in Log Hourly Wages by Percentile Relative to the Median (2011 - 2019) - individual countries}
+    {\includegraphics[scale=0.5]{wage_changes_percentiles.png} }
     \label{wage_changes_percentiles}
 \end{figure}
 
 \begin{figure}[!htbp]%
     \centering
-    {\includegraphics[scale=0.5]{employ_changes_by_percentiles.png} }
     \caption{Changes in employment by occupational skill percentile, 2011–2019. Mean log-wage in 2011 was used for obtaining the occupation skill rank}
+    {\includegraphics[scale=0.5]{employ_changes_by_percentiles.png} }
     \label{employ_changes_percentiles}
 \end{figure}
 
 \begin{figure}[!htbp]%
-        \centering 
-        {\includegraphics[scale=0.45]{labour_supplies_cee.png}}
+        \centering
         \caption{Changes in relative high/low skill labour supply in CEE}
+        {\includegraphics[scale=0.45]{labour_supplies_cee.png}}
         \label{labour_supplies_cee}
 \end{figure}
 
 \begin{figure}[!htbp]%
-    \centering 
-    {\includegraphics[scale=0.45]{high_low_log_wage_gap.png}}
+    \centering
     \caption{Changes in composition adjusted high/low-skill log wage premium}
+    {\includegraphics[scale=0.45]{high_low_log_wage_gap.png}}
     \label{high_low_log_wage_gap}
 \end{figure}
 
@@ -695,89 +764,86 @@ tertiary education                    &   -1.393563 &  14.118566 &   15.750078 &
 \end{table}
 
 
-
 \begin{table}[!htbp]
 \centering 
-\caption{Random Effect model comparison - CEE and Visegrad countries}
-\label{RE_models_comparison}
-
-\resizebox{\textwidth}{!}{\begin{tabular}{lccccc}
-\toprule
-                               &   \textbf{CEE}  & \textbf{CEE - Unions} & \textbf{CEE $t^{2}$} & \textbf{Visegrad} & \textbf{Visegrad $t^{2}$}  \\
-\midrule
-\textbf{Dep. Variable}         &     logW\textbackslash HL    &        \textbackslash HL       &     logW\textbackslash HL     &      logW\textbackslash HL     &        logW\textbackslash HL        \\
-\textbf{No. Observations}      &       118       &          118          &       118        &         60        &           60           \\
-\textbf{Cov. Est.}             &    Unadjusted   &       Unadjusted      &    Unadjusted    &     Unadjusted    &       Unadjusted       \\
-\textbf{R-squared}             &      0.7631     &         0.7703        &      0.7731      &       0.8058      &         0.8430         \\
-\textbf{R-Squared (Within)}    &      0.4455     &         0.4624        &      0.4690      &       0.5993      &         0.6759         \\
-\textbf{R-Squared (Between)}   &      1.0000     &         1.0000        &      1.0000      &       1.0000      &         1.0000         \\
-\textbf{R-Squared (Overall)}   &      0.7631     &         0.7703        &      0.7731      &       0.8058      &         0.8430         \\
-\textbf{F-statistic}           &      38.657     &         35.884        &      36.465      &       44.818      &         47.413         \\
-\textbf{P-value (F-stat)}      &      0.0000     &         0.0000        &      0.0000      &       0.0000      &         0.0000         \\
-\textbf{=====================} & =============== &    ===============    & ===============  &  ===============  &    ===============     \\
-\textbf{log(H\textbackslash L)}             &     -0.1002     &        -0.0739        &     -0.1514      &      -0.1521      &        -0.2496         \\
-\textbf{ }                     &    (-1.6702)    &       (-1.2114)       &    (-2.3842)     &     (-1.4363)     &       (-2.4955)        \\
-\textbf{Time}                 &     -0.0078     &        -0.0054        &      3.2631      &      -0.0109      &         6.5808         \\
-\textbf{ }                     &    (-2.5403)    &       (-1.6454)       &     (2.1696)     &     (-2.4631)     &        (3.5341)        \\
-\textbf{EE}            &     -0.0310     &        -0.0052        &      0.0128      &                   &                        \\
-\textbf{ }                     &    (-0.5516)    &       (-0.0901)       &     (0.2183)     &                   &                        \\
-\textbf{HU}            &      0.1481     &         0.1532        &      0.1704      &       0.1707      &         0.2133         \\
-\textbf{ }                     &     (4.2572)    &        (4.4386)       &     (4.7729)     &      (3.3059)     &        (4.4070)        \\
-\textbf{LT}            &      0.1197     &         0.1289        &      0.1690      &                   &                        \\
-\textbf{ }                     &     (1.9310)    &        (2.0948)       &     (2.5981)     &                   &                        \\
-\textbf{LV}            &      0.1550     &         0.1393        &      0.1892      &                   &                        \\
-\textbf{ }                     &     (3.1199)    &        (2.7909)       &     (3.6864)     &                   &                        \\
-\textbf{PL}            &     -0.0265     &        -0.0436        &     -0.0070      &      -0.0067      &         0.0305         \\
-\textbf{ }                     &    (-0.8184)    &       (-1.3087)       &    (-0.2105)     &     (-0.1436)     &        (0.7012)        \\
-\textbf{SI}            &      0.1506     &         0.0648        &      0.1796      &                   &                        \\
-\textbf{ }                     &     (3.6747)    &        (1.0454)       &     (4.2319)     &                   &                        \\
-\textbf{SK}            &     -0.1583     &        -0.1592        &     -0.1559      &      -0.1559      &        -0.1513         \\
-\textbf{ }                     &    (-6.8684)    &       (-6.9814)       &    (-6.8721)     &     (-6.6327)     &       (-7.0800)        \\
-\textbf{constant}                 &      0.4610     &         0.3808        &      3262.3      &       0.4392      &         6575.2         \\
-\textbf{ }                     &     (5.8769)    &        (4.2735)       &     (2.1751)     &      (3.3976)     &        (3.5402)        \\
-\textbf{UD}                    &                 &         0.0058        &                  &                   &                        \\
-\textbf{ }                     &                 &        (1.8311)       &                  &                   &                        \\
-\textbf{$Time^2$}             &                 &                       &     -0.0008      &                   &        -0.0016         \\
-\bottomrule
-\end{tabular}}
-\end{table}
-
-
-
-
-\begin{table}[!htbp]
-\centering 
-\caption{Fixed effect model comparison - CEE and Visegrad countries (T-stats reported in parentheses)}
-\label{FE_models_comparison}
-
+\caption{Panel Regression Comparison - Individual Countries}
+\label{regression_individual_countries}
 \begin{center}
-\resizebox{\textwidth}{!}{\begin{tabular}{lccccc}
-\toprule
-                               & \textbf{CEE} & \textbf{CEE - Unions} & \textbf{CEE $t^{2}$} & \textbf{Visegrad} & \textbf{Visegrad $t^{2}$}  \\
-\midrule
-\textbf{Dep. Variable}         &   logW\textbackslash HL   &        logW\textbackslash HL      &     logW\textbackslash HL    &      logW\textbackslash HL     &        logW\textbackslash HL        \\
-\textbf{No. Observations}      &     118      &          118          &       118        &         60        &           60           \\
-\textbf{Cov. Est.}             &  Unadjusted  &       Unadjusted      &    Unadjusted    &     Unadjusted    &       Unadjusted       \\
-\textbf{R-squared}             &    0.2007    &         0.3376        &      0.2044      &       0.3862      &         0.4030         \\
-\textbf{R-Squared (Within)}    &    0.4070    &         0.4173        &      0.4128      &       0.5134      &         0.5526         \\
-\textbf{R-Squared (Between)}   &    0.0472    &         0.2787        &      0.0498      &       0.2666      &         0.2624         \\
-\textbf{R-Squared (Overall)}   &    0.2007    &         0.3376        &      0.2044      &       0.3862      &         0.4030         \\
-\textbf{F-statistic}           &    14.434    &         19.369        &      9.7651      &       17.932      &         12.603         \\
-\textbf{P-value (F-stat)}      &    0.0000    &         0.0000        &      0.0000      &       0.0000      &         0.0000         \\
-\textbf{=====================} & ============ &      ============     &   ============   &    ============   &      ============      \\
-\textbf{log(H\textbackslash L)}             &    0.0630    &         0.1080        &      0.0603      &       0.2082      &         0.1996         \\
-\textbf{ }                     &   (2.1143)   &        (3.7546)       &     (2.0059)     &      (3.0956)     &        (2.9685)        \\
-\textbf{trend}                 &   -0.0149    &        -0.0121        &      1.8574      &      -0.0246      &         4.2630         \\
-\textbf{ }                     &  (-5.3300)   &       (-4.6309)       &     (0.7300)     &     (-5.9448)     &        (1.2497)        \\
-\textbf{const}                 &    0.6265    &         0.5107        &      1868.9      &       0.7966      &         4279.5         \\
-\textbf{ }                     &   (19.494)   &        (13.496)       &     (0.7361)     &      (10.969)     &        (1.2571)        \\
-\textbf{UD}                    &              &         0.0079        &                  &                   &                        \\
-\textbf{ }                     &              &        (4.8551)       &                  &                   &                        \\
-\textbf{$Time^2$}             &              &                       &     -0.0005      &                   &        -0.0011         \\
-\bottomrule
+%\resizebox{\textwidth}{!}{
 
-\end{tabular}}
+
+\begin{tabular}{lrrr}
+\toprule
+ country &  elasticity &   p-value &    t-stat \\
+\midrule
+      CZ &    0.029875 &  0.828226 &  0.221766 \\
+      BG &   -0.348470 &  0.051787 & -2.207408 \\
+      EE &    0.074138 &  0.759536 &  0.313159 \\
+      HU &    0.110438 &  0.432270 &  0.812607 \\
+      LT &   -0.020593 &  0.857309 & -0.183709 \\
+      LV &    0.084884 &  0.432266 &  0.818276 \\
+      PL &    0.989898 &  0.227472 &  1.271998 \\
+      RO &   -0.267396 &  0.012218 & -3.051628 \\
+      SI &   -0.048920 &  0.571804 & -0.581287 \\
+      SK &    0.114771 &  0.206714 &  1.334802 \\
+\bottomrule
+\end{tabular}
+
+%}
 \end{center}
 \end{table}
+
+
+
+
+
+% Regression results - Low skill as High School educated
+\begin{table}[!htbp]
+\centering 
+\caption{Panel Regression Comparison - using secondary education as a low-skill category}
+\label{panel_regression_comparison_high_school}
+\begin{center}
+\resizebox{\textwidth}{!}{
+
+
+
+\begin{tabular}{lccc}
+\toprule
+                                 & \textbf{FE} & \textbf{FE} &    \textbf{RE}     \\
+\midrule
+\textbf{Dependent Variable}           &       skill premium       &         skill premium        &      skill premium      \\
+%\textbf{Dep. Variable}           &       logW\_HL       &         logW\_HL        &      logW\_HL      \\
+%\textbf{Estimator}               &       PanelOLS       &         PanelOLS        &   RandomEffects    \\
+%\textbf{No. Observations}        &         144          &           144           &        144         \\
+%\textbf{Cov. Est.}               &      Clustered       &        Clustered        &     Clustered      \\
+%\textbf{R-squared}               &        0.3279        &          0.0626         &       0.3154       \\
+%\textbf{R-Squared (Within)}      &        0.3279        &          0.3237         &       0.3351       \\
+%\textbf{R-Squared (Between)}     &        0.2461        &          0.2232         &      -0.2642       \\
+%\textbf{R-Squared (Overall)}     &        0.2486        &          0.2263         &       0.0284       \\
+%\textbf{F-statistic}             &        64.884        &          7.9480         &       32.475       \\
+%\textbf{P-value (F-stat)}        &        0.0000        &          0.0056         &       0.0000       \\
+\textbf{=====================}   &     ===========      &       ===========       &  ===============   \\
+\textbf{log(H\_L)}               &       -0.2155        &         -0.1912         &      -0.0715       \\
+\textbf{ }                       &      (-3.3988)       &        (-2.0002)        &     (-1.2777)      \\
+\textbf{trend}                   &                      &                         &      -0.0073       \\
+\textbf{ }                       &                      &                         &     (-1.4830)      \\
+\textbf{constant}                   &                      &                         &       0.4930       \\
+\textbf{ }                       &                      &                         &      (7.3184)      \\
+\textbf{=======================} &    =============     &      =============      & =================  \\
+\textbf{No. Observations}        &         144          &           144           &        144         \\
+\textbf{Country FE}                 &        Yes        &          Yes         &                    \\
+\textbf{Time Effects}                 &        No        &          Yes         &                    \\
+\textbf{Cov. Est.}               &      Clustered       &        Clustered        &     Clustered      \\
+\textbf{$R^{2}$}               &        0.3279        &          0.0626         &       0.3154       \\
+\bottomrule
+\end{tabular}
+
+
+}
+\caption*{High school category was defined as containing ISCED level of the highest attained education 3 and 4.}
+\end{center}
+\end{table}
+
+
 
 \end{document}
