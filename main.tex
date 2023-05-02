@@ -66,7 +66,7 @@ high skill labour are higher than often found in other countries. These results 
 
 \bigskip
 \textbf{Acknowledgements:}
-This work was supported by the Grant Agency of the Czech Republic, Grant No. GACR no. 20-14990S.
+This work was supported by the Grant Agency of the Czech Republic, Grant No. GACR no. 20-14990S. 
 
 \end{abstract}
 \clearpage
@@ -155,7 +155,7 @@ Last but not least, \citet{glitz2021skill} shows that after breaking German the 
 
 
 \section{Trends in Wage and Employment Development}
-\subsection{Labour Market Polarization?}
+\subsection{Labour Market Polarization?}\label{wage_analysis}
 To analyse trends in labour market developments, we rely on the Eurostat EU-SILC database with data also from the CEE countries (Czech Republic, Slovakia, Poland, Hungary, Latvia, Estonia, Lithuania, Romania, and Bulgaria) between 2005 and 2019. The EU-SILC collects information about income, poverty, social exclusion and living conditions across the EU countries. Our dataset contains more than 2 million observations in total.
 
 For presentation purposes, we aggregated the countries into three regional blocks, the Central Europe (the "Visegrad" countries), the Baltics (Latvia, Estonia and Lithuania) and two Balkan countries, Romania and Bulgaria. This division was inspired by the geographical and socioeconomic proximity of the countries.\footnote{We add Slovenia to the Central European countries, as its macroeconomic performance is much closer to them than Romania and Bulgaria.} The results below refer to these regional blocks, results for individual countries are presented in the Appendix.\footnote{Note that we calculate the aggregated metrics by pooling all observations in a region together and then treating it as a single territory, i.e. the statistics below are not averages of individual countries' statistics in the Appendix.} We choose 2011-2019 as our main period of interest due to data limitations (data for Bulgaria and Romania and various variable changes) and also in order to concentrate on the period after the Great Recession.
@@ -211,7 +211,10 @@ Table \ref{real_wage_changes_agg} shows log changes in real wages for different 
 Notably, we observe robust growth across all categories in the Baltics and Balkan countries. On the other hand, the situation in Central Europe is somewhat different. The wages of both the highest and lowest education categories decline, which contrasts to wage increases across secondary education.\footnote{Note, however, that the results in the primary education category are driven by a relatively low number of observations and only two countries - Poland and Slovakia.} The CEE experience, therefore, contrasts with the US experience, where the less-educated workers experienced real wage declines \citep{acemoglu2011skills}.
 
 Similarly, Table \ref{labour_supply_changes_agg} shows changes in relative labour supply.\footnote{Tables \ref{labour_supply_changes_bb} and \ref{labour_supply_changes_ce} describe the results for individual countries} Concretely, we depict log changes in each group's share of total labour supply measured in efficiency units.\footnote{Efficiency units are defined in section \ref{KM_vars}.} The results show a steady rise in female share in the labour supply and a similar increase for the highest education categories across the regional groups. Among the experience categories, we see a rising labour supply for the higher experience groups and declines in the case of workers with less than five years of working experience, probably a sign of population ageing.
+%%% Fitzenberger's review %%%%%
+% Table 2 therefore points to increasing relative supply of tertiary educated while Table 1 shows evidence of stagnating or even declining relative wage premiums. This evidence does not exclude the possibility of supply changes as a primary factor of the relative wage dynamics (as exhaustively examined by Katz and Murphy, 92).
 
+%%%%%%%%
 % Aggregate - Table 2
 % TODO - rows ordering
 \begin{table}[!htbp]
@@ -309,11 +312,19 @@ Next, we focus on changes in log wage percentiles of full-time workers relative 
     \centering
     \caption{Changes in Employment by Occupational Skill Percentile, 2011–2019}
     {\includegraphics[scale=0.5]{agg_employ_changes_percentiles.png} }
+    %{agg_employ_changes_percentiles_no_weighting.png} }
     \label{agg_employ_changes_percentiles}
     \caption*{\footnotesize The vertical axis depicts a change of employment (annual hours worked) in each occupational percentile as a share of total employment in a given region. The occupations are ranked by skill percentiles obtained using employment-weighted mean log wage for each occupation in 2011. A Line representing a locally weighted smoothing regression is also depicted. All employment share changes are multiplied by 100. Also, note that the y-axis range omits some extreme values to better display the smoothed regression.   }
 \end{figure}
 Figure \ref{agg_employ_changes_percentiles} comments on a crucial polarizing behaviour in the CEEC. It shows changes in employment shares for the ISCO-08 occupations skill rank between 2011-2019\footnote{The starting year of the analysis is chosen due to changes in ISCO classification in the EU-SILC dataset.}, it also depicts a locally weighted smoothing regression curve. We can notice a rather different and diversified, yet mostly monotonic, behaviour across the CEE countries. There is a declining tendency for the employment share of high-income occupations, especially in the case of Central Europe. To a lesser degree, we see this behaviour in the Baltic states, with most of the percentiles below the eighth decile being predominately flat. Romania and Bulgaria again represent a certain outlier showing rising employment in high-income occupations. Note that there is also a tendency for employment shares to increase for the lowest percentiles in the two countries, which would indicate the existence of a certain level of polarization. However, the magnitude of these changes is low compared to the changes in the highest percentiles. We can also note an increasing variance of the estimates in Balkan and Baltics in the upper half of the distribution - this makes the conclusions for high percentiles for Baltics and the two Balkan countries less reliable.\footnote{This is also supported the by development visible in Figure \ref{employ_changes_percentiles} where the highest percentiles for both Bulgaria and Romania seems to be rather flat.}
 Last but not least, compared to the US evidence, we again do not see the characteristic U-shape found in \citet{acemoglu2012does} for the 1990s and 2000s US labour market, interpreted as the job polarization.
+
+%%%% Fitzenberger's review --- Fig.5 paragraph rewrite
+%Figure \ref{agg_employ_changes_percentiles} comments on a crucial polarizing behaviour in the CEEC. It shows changes in employment shares for the ISCO-08 occupations skill rank between 2011-2019\footnote{The starting year of the analysis is chosen due to changes in ISCO classification in the EU-SILC dataset.}, it also depicts a locally weighted smoothing regression curve. We can notice a rather diversified behaviour across the CEE countries. Central Europe stands out with a clearly monotonic changes in relative employment and an increasing employment share of high-income occupations. The regression curves in the two remaining regions, on the other hand, are rather flat with small increases around 3rd decile. However, the magnitude of these changes is small and especially the Baltics show a high variance of the estimates in the middle of the distribution. Also note that our results can hide significant heterogeneity inside the countries groups\footnote{This is  visible in Figure \ref{employ_changes_percentiles} with some of the Visegrad countries showing small declines in high income categories and diverse results in case of the Baltics.}
+%Last but not least, compared to the US evidence, we again do not see the characteristic U-shape found in \citet{acemoglu2012does} for the 1990s and 2000s US labour market, interpreted as the job polarization.
+
+
+%%%%% Fitzenberger's review - end
 
 
 In sum, our analysis has shown differences between the CEE labour markets and the stylized facts found in developed countries. In particular, we do not confirm either job or wage polarization in the CEE, and we never see a monotonic rise in inequality similar to certain periods of the US development. Yet, at the same time, there is rather a diversified behaviour between the investigated regions themselves. In general, we can contrast declining measures of inequality in Central European countries with the mostly stagnating situation in the Baltic and signs of increasing inequality in the case of the Balkan countries.
@@ -340,10 +351,59 @@ Figures \ref{wage_changes_nace} and \ref{employ_changes_nace} show relative chan
 \end{figure}
 
 
-When we compare similar plots using major ILO employment categories in Figures \ref{wage_changes_ilo} and \ref{employ_changes_ilo}, we again do not find a unified picture among the regions. Figure \ref{employ_changes_ilo} allows for a basic comparison with trends both in the US and Western Europe, where we, in line with the job polarization hypothesis, find high- (Managers, Professionals and Technicians) and low-education occupations (Elementary and Services \& Sales) growing at the expense of the middle-education occupations such as clerks, machine operators, and crafts and trade jobs (Acemoglu and Autor, 2011). We see similar behaviour for Baltic states with Managers and Professionals growing in the relative employment share together with Elementary occupations on the other side of the spectrum. However, in the two remaining regions, there is little evidence suggesting the validity of this hypothesis, with employment shares of occupations with the same level of education rarely increasing/falling simultaneously (e.g., growth of Professionals versus the decline of Managers and Technicians in Central Europe).
+When we compare similar plots using major ILO employment categories in Figures \ref{wage_changes_ilo} and \ref{employ_changes_ilo}, we again do not find a unified picture among the regions. Figure \ref{employ_changes_ilo} allows for a basic comparison with trends both in the US and Western Europe, where we, in line with the job polarization hypothesis, find high- (Managers, Professionals and Technicians) and low-education occupations (Elementary and Services \& Sales) growing at the expense of the middle-education occupations such as clerks, machine operators, and crafts and trade jobs (Acemoglu and Autor, 2011). We see similar behaviour for Baltic states with Managers and Professionals growing in the relative employment share together with Elementary occupations on the other side of the spectrum. However, in the two remaining regions, there is less evidence suggesting the validity of this hypothesis. Employment shares of occupations with the same level of education are rarely increasing/falling simultaneously (e.g., growth of Professionals versus the decline of Managers and Technicians in Central Europe) and  rise of Professionals looks as by far the most consistent feature among the regions.
 
-Moreover, our data frequently show changes in relative employment going in the opposite direction to changes in relative wages (note a strong wage performance of Craft and Trade workers in Central Europe together with their decreasing employment share). This may suggest that supply-side causality connected with an overheated labour market rather than demand shifts assumed by the Skill Bias framework is the dominant force. The movement of wages and employment in opposite directions can also be found in other cases.
-In the case of the Balkan economies, the most prominent employment change seems to be a growth in Services $\&$ Sales, which are considered low-education by \citep{acemoglu2011skills}\footnote{However, this classification is up to debate as the service jobs are here aggregated with sales occupations.}, combined with a mild decrease in relative wages in this category.
+
+
+%%%%% Fitzenberger's Revision: Link to Katz and Murphy (esp. Section V)
+When compared to the original SBTC hypothesis in the form presented by \citet{katz1992changes}, we can see that despite regional and country differences two most prominent and consistent phenomena coming from the industrial and occupational analysis in Figure \ref{employ_changes_nace} and \ref{employ_changes_ilo} are the decline in relative employment in Manufacturing and Agriculture and significant rise in the “Administrative” category which is generally characterised by professional, scientific and technical activities.  On the occupational level, in Figure \ref{employ_changes_ilo}, we already note the increase in relative employment of “Professionals” combined with mostly declining relative employment of the middle-skilled categories. Therefore, we find our findings from industrial and occupational employment division analysis in line with those given by \citet{katz1992changes} as we see shift towards more professional and high-skilled categories in terms of employment. 
+However, in case of wages we can see a different picture to \citeauthor{katz1992changes} - education premium is shrinking as suggested by the real wage changes that tend to peak in secondary education categories, as discussed in section \ref{wage_analysis},  which is in contrast to the monotonically increasing wage changes in education level found by \citeauthor{katz1992changes}. We will see that the skill premium is actually declining later. 
+%%%%% Fitzenberger's Revision - end
+
+
+Moreover, our data frequently show changes in relative employment going in the opposite direction to changes in relative wages (note a strong wage performance of Craft and Trade workers in Central Europe together with their decreasing employment share). This suggest a possibility of negative covariance between changes in relative wages and employment. Such negative covariance could be a result of supply-side causality connected with an overheated labour market rather than demand shifts assumed by the Skill Bias framework is the dominant force. The movement of wages and employment in opposite directions can also be found in other cases.
+%%%%% Fitzenberger's Revision - Table III
+%In the case of the Balkan economies, the most prominent employment change seems to be a growth in Services $\&$ Sales, which are considered low-education by \citep{acemoglu2011skills}\footnote{However, this classification is up to debate as the service jobs are here aggregated with sales occupations.}, combined with a mild decrease in relative wages in this category.
+
+
+In the next section we try to formally evaluate the hypothesis of negative covariance of relative wages and relative employment changes suggested above - we use similar approach to \citet{katz1992changes} and evaluate inner products of changes in relative wages and relative supplies inside demographic groups \footnote{The groups are further described in section \ref{KM_vars}} in three roughly equal time periods. Under assumption that labour supply shift are dominant factor in relative wages development, we expect the inner products to be negative. Our results in Table \ref{inner_products_ls_w} show that the inner products are positive in every country group for at least one period. This suggests that the supply side factors are likely not the sole explanation of the relative wages development and shifts in relative demand should play a role. 
+
+\begin{table}[!htbp]
+\centering 
+\caption{Inner Products}
+\label{inner_products_ls_w}
+\begin{center}
+%\resizebox{\textwidth}{!}{
+
+\begin{tabular}{lrrr}
+\toprule
+{} &  2007-2011 &  2007-2016 &  2011-2016 \\
+\midrule
+
+Cent. Europe &  -0.002735 &   0.006626 &   0.004317 \\
+Baltics   &   0.000477 &  -0.005630 &  -0.002432 \\
+RO \& BG   &  -0.005488 &  -0.001376 &   0.001183 \\
+\midrule
+Detrended data\\
+\midrule
+Cent. Europe &  -0.000785 &  -0.000071 &  -0.000998 \\
+Baltics   &   0.000351 &  -0.000011 &   0.000494 \\
+RO \& BG   &  -0.002006 &  -0.000080 &  -0.001667 \\
+\bottomrule
+\end{tabular}
+%}
+\caption*{\footnotesize  The numbers above represent inner products of changes in relative supply and wages between three time periods (2007-2010, 2011-2015, 2016 and 2019). We calculate average relative supply and wages within each of time periods for each of our population groups defined by education, sex and experience. The reported numbers are inner products of the changes in these measures of wages and supplies between each pair of the three time intervals. The procedure is repeated for each of the country groups. Columns above indicate start years of each of the compared time intervals.}
+\end{center}
+\end{table}
+
+Moreover, detrending the wage and supply measures for each demographic group by a linear trend  - simulating a smooth linear demand growth such as by skill-biased technological change makes the inner product largely negative which suggest relative demand is largely stable besides the linear trend. This suggests validity of the SBTC model we will investigate in the next section.
+Similarly to \citeauthor{katz1992changes} we conclude, demand shifts are necessary to explain wage structure in the CEE.
+
+%%%%% Fitzenberger's Revision - Table III
+
+%%%%% Fitzenberger's Revision - Table VI
+%Results in previous table does not give us firm persuation that our supply side shifts are the dominant force in the CEE as some of the inner products are not negative. Therefore, we investigate demand side shift, to achieve this, we construct demand shift measure similar to the one in KM. Demand shift here are expressed by  changes in sectoral employment weighted by ... 
+
 
 %Figure 8
 \begin{figure}[!htbp]%
@@ -440,7 +500,7 @@ As can be seen in Figure \ref{agg_labour_supplies}, there is a rising tendency i
 
 The original Skill Bias Technological change hypothesis assumes a demand-driven change in the labour market (which in turn results from exogenously given technological change). Corresponding to such change should then be an increase in both skill premium and relative supply of skills, as was empirically documented in the case of the US \citep{acemoglu2011skills}. The two key variables of this model are therefore positively correlated. 
 
-The data for CEEC shown in Figures \ref{agg_high_low_log_wage_gap} and \ref{agg_labour_supplies}, on the other hand, suggest a negative correlation between the skill premium and the relative skill supply. Our data indeed confirm that the two variables are negatively correlated both on the level of regional aggregates and on an individual country level, with the exception of Estonia and Bulgaria, two countries experiencing a recent rise in the skill premium. % see Katz and Murphy - detrended / KM 92 - inner products in the ntbs
+The data for CEEC shown in Figures \ref{agg_high_low_log_wage_gap} and \ref{agg_labour_supplies} showing university wage premium and relative supply by year. The Figure does complements Table \ref{inner_products_ls_w} and suggest a negative correlation between the skill premium and the relative skill supply. Our data indeed confirm that the two variables are negatively correlated both on the level of regional aggregates and on an individual country level, with the exception of Estonia and Bulgaria, two countries experiencing a recent rise in the skill premium. % see Katz and Murphy - detrended / KM 92 - inner products in the ntbs
 
 
 % Figure 11
@@ -453,10 +513,13 @@ The data for CEEC shown in Figures \ref{agg_high_low_log_wage_gap} and \ref{agg_
 \end{figure}
 
 This finding seems important as it contradicts one of the fundamental assumptions of the SBTC model: demand-driven change would imply a move along the supply curve and, therefore, a simultaneous increase/decrease in both variables. In contrast, the situation in CEE seems to be consistent with a movement along the labour demand curve and therefore suggests supply changes setting the market trends or at least taking a more prominent role than standard SBTC model logic would imply. This seems to be in line with the evidence of overheating an labour market in the CEE and was documented above in the analysis of Figures \ref{wage_changes_ilo} and \ref{employ_changes_ilo}.
+% difference top Fig.3 - Fig.3 does not distinguish skill diffs and is limited to certain periods here we are interested
 
 If we, following \citet{acemoglu2012does}, detrend the series, as can be visible in Figure \ref{agg_km_vars_detrended} in the Appendix, the negative relationship between the relative labour supply and the skill premium disappears - correlation for all regions as well as the most countries (Figure \ref{km_vars_detrended} in the Appendix) becomes positive. This contrasts with the US case, as found in \citet{acemoglu2012does}. The story is different, however, for Romania, Bulgaria, Lithuania and Slovenia. Here we confirm the negative correlation, similarly to the US.
 For further investigation of the two variables, we now look at the panel regression for 2005-2019.
-
+%%%% Fitzenberger's revision - Age
+\footnote{Unlike some of the follow-up works on SBTC (CM01...), we do not distinguish age categories (young and old workers), significant part of our motivation, is a different behaviour of simple education premia in most of our groups compared to the original us example which was motivated. In figure \ref{wage_premiums_by_age}, we see mostly parallel movement in both young and old education skill premium. The only regions is ... Investigation of advanced framework can be topic of further research.}   % maybe mention young unemployment compared to southern periphery
+%%%% Fitzenberger's revision --end
 %%%% Regression results
 Following the key works in the field, such as \citet{katz1992changes} or \citet{acemoglu2012does}, we perform regression according to Equation \ref{eqn:STBC_regression} separately for each country - the results confirm the conclusions of the detrended series analysis above - the estimates are insignificant with the exception of Romania and Bulgaria that have significantly negative coefficients with magnitude suggesting higher elasticity than in the US case (-0.27 and -0.34, respectively).\footnote{Overview of the results can be found in Table \ref{regression_individual_countries}. We have also done this exercise for the regional groups - elasticities are again insignificant except for the Balkans.}
 
@@ -698,7 +761,9 @@ The equalizing and generally pro-worker and pro-median situation in the labour m
 \begin{figure}[!htbp]%
     \centering
     \caption{Changes in Employment by Occupational Skill Percentile, 2011–2019.}
-    {\includegraphics[scale=0.5]{employ_changes_by_percentiles.png} }
+    {\includegraphics[scale=0.5]{employ_changes_by_percentiles.png}
+    %\includegraphics[scale=0.5]{employ_changes_by_percentiles_without_weighting.png} 
+    }
     \label{employ_changes_percentiles}
     \caption*{\footnotesize Mean log-wage in 2011 was used for obtaining the occupation skill rank. Slovenia was excluded from this graph due to low number of observations. }
 \end{figure}
@@ -725,6 +790,14 @@ The equalizing and generally pro-worker and pro-median situation in the labour m
     \caption{Detrended Skill Wage Premium Against Relative Labour Supply}
     {\includegraphics[scale=0.5]{km_vars_detrended.png} }
     \label{km_vars_detrended}
+\end{figure}
+
+
+\begin{figure}[!htbp]%
+    \centering
+    \caption{Tertiary-Secondary Education Wage Premiums for Younger and Older Workers}
+    {\includegraphics[scale=0.5]{wage_premiums_by_age.png} }
+    \label{wage_premiums_by_age}
 \end{figure}
 
 
