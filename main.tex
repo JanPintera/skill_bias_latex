@@ -45,7 +45,7 @@
     \begin{large}Jan Pintera\end{large} \\\vspace{5mm} \begin{small} Institute of Economic Studies, Faculty of Social Sciences, Charles University,\\ Prague, Czech Republic\\
     Email (corresponding author): jan.pintera@fsv.cuni.cz \end{small}
 }
-\date{May 2023}
+\date{September 2023}
 \def \jel {	J30, J31, O14, O31, O33}
 \def \Keywords {Labor Markets, Technological Change, Polarization, Skills}
 
@@ -90,7 +90,7 @@ Despite these dissimilarities, a populist drive comparable to the developed coun
 
 
 
-From a methodological perspective, this work builds on the Skill-Bias Technological change hypothesis \citep{katz1992changes} that is based on the interplay of supply and demand for skill. The latter is driven by technological change, and the former by investment in human capital. This work will concentrate on potential causes of labour market inequality outlined by the Skill Bias Technological Change (STBC) hypothesis that despite its early origin \citep{katz1992changes} and empirical critiques seem to endure to these days \citep{aziz2021between, goldin2020extending}.
+From a methodological perspective, this work builds on the Skill-Bias Technological change hypothesis \citep{katz1992changes} that is based on the interplay of supply and demand for skill. The latter is driven by technological change, and the former by investment in human capital. This work will concentrate on potential causes of labour market inequality outlined by the Skill-biased Technological Change (STBC) hypothesis that despite its early origin \citep{katz1992changes} and empirical critiques seem to endure to these days \citep{aziz2021between, goldin2020extending}.
 
 Further refinement of the SBTC hypothesis postulates job and wage polarization, phenomena seen in the US and other developed economies \citep{rodrik2020economic, temin2018vanishing}. Using the EU-SILC survey microlevel data from 2005 to 2019, this work brings descriptive and regression analysis of labour market polarization and other key labour market trends in the context of Central and Eastern Europe.
 
@@ -407,7 +407,7 @@ RO \& BG   &  -0.002006 &  -0.000080 &  -0.001667 \\
 \bottomrule
 \end{tabular}
 %}
-\caption*{\footnotesize  The numbers above represent the inner products of relative supply and wage changes between three time periods (2007-2010, 2011-2015, 2016 and 2019). We calculate the average relative supply and wages within each of the time periods for each of our population groups defined by education, sex, and experience. Relative supply is defined as hours worked supplied by a given group divided by total employment measured in efficiency units, while relative wages are created using average employment shares as fixed weights the same way as described in section \ref{KM_vars}. The reported numbers are inner products of the changes in these measures of wages and supplies between each pair of the three time intervals. The procedure is repeated for each of the country groups. The columns above indicate the start years of each compared time interval.}
+\caption*{\footnotesize  The numbers above represent the inner products of relative supply and wage changes between three time periods (2007-2010, 2011-2015, 2016 and 2019). We calculate the average relative supply and wages within each of the time periods for each of our demographic groups defined by education, sex, and experience. Relative supply is defined as hours worked supplied by a given group divided by total employment measured in efficiency units, while relative wages by group are created using average employment shares as fixed weights the same way as described in section \ref{KM_vars}. The reported numbers are inner products of the changes in these measures of wages and supplies between each pair of the three time intervals. The procedure is repeated for each of the country groups. The columns above indicate the start years of each compared time interval.}
 \end{center}
 \end{table}
 
@@ -443,7 +443,7 @@ In line with the findings of \citeauthor{katz1992changes}, we conclude that shif
 %Despite bringing an interesting view of the economies, our results so far do not tell us any decisive conclusion about the SBTC hypothesis. We can only tell that our results, especially those for Central Europe (which are inverse to the US scenario), differ from those of the West. They, however, still could be in line with either SBTC or RBTC theory, given that either high skill labour supply growth is high enough or the countries are recipients of routine jobs from abroad thanks to globalization.
 
 \newpage
-\section{Skill Bias Technological Change and the CEE}\label{skill_bias_cee}
+\section{Skill-biased Technological Change and the CEE}\label{skill_bias_cee}
 The following section introduces the Canonical Model, a formalisation of the SBTC hypothesis used in this work to estimate the elasticity of substitution between high and low skill labour. As the SBTC model is influential and successfully applied in developed economies \citep{acemoglu2012does, glitz2021skill}, it represents an ideal basis for comparison of the CEE and Western development. The following section also discusses the construction of the key variables - labour supply and skill premium. Analysis of these two variables provides further evidence about the labour market dynamics. 
 
 \subsection{The Canonical Model}
@@ -476,7 +476,8 @@ We follow the proceedings of \citet{katz1992changes} and \citet{glitz2021skill} 
 We compute an estimate of total hours worked in each group and each year as weeks worked times usual weekly hours and personal sample weight from the survey. Similarly, we compute average weekly wages for full-time workers for each of the education-experience-gender groups defined above.\footnote{As the survey does not contain information about worked weeks but only worked months, we assume a person worked 4 weeks every month to get our estimate. In the rest of the work, we prefer using variables with monthly frequency (e.g., monthly wages)}
 
 % Obtaining average relative wage per group
-We start by calculating the statistics used further in the process. We sum over all individuals in a group to get a total labour supply in a given group and year (so-called count sample). Subsequently, we compute the relative share of each group in total labour supply in a given year and use this measure to calculate fixed weights defined by a vector of average employment shares for each group over all available years in the sample. We use these fixed weights together with the groups' average wages matrix to calculate time series of relative wages by groups.\footnote{Each group's average weekly wages are weighted by the fixed weights, creating a time series of indices for each year of the sample by which we then deflate wages for all groups in a given year.} An average of this time series through time can be interpreted as an estimate of the average relative wage of a given group.% this should be N' W
+We start by calculating the statistics used further in the process. We sum over all individuals in a group to get a total labour supply in a given group and year (so-called count sample). Subsequently, we compute the relative share of each group in total labour supply in a given year and use this measure to calculate fixed weights defined by a vector of average employment shares for each group over all available years in the sample. We use these fixed weights together with the groups' average wages matrix to calculate time series of relative wages by groups.\footnote{In a given year, all groups' average weekly wages are weighted by its respective fixed weights and summed, creating a wage index for each year of the sample. %result of N'W
+We then deflate wages for all groups in a given year to create relative wages.} An average of this time series through time can be interpreted as an estimate of the average relative wage of a given group.
 
 % Efficiency units 
 The relative labour supply and other descriptive statistics below are obtained using efficiency units. Efficiency units are essentially the labour supplies (hours worked) for each education-experience-gender-year group multiplied by the group's average relative wage estimate defined above. The result of this operation is then labour supply for each group in each year. We construct more aggregated measures of the labour supply by summing over these groups in each skill group (education category, high and low).
@@ -509,7 +510,7 @@ As can be seen in Figure \ref{agg_labour_supplies}, there is a rising tendency i
     \caption*{\footnotesize The Figure displays the logarithm of the skill premium described in section \ref{KM_vars}}
 \end{figure}
 
-The original Skill Bias Technological change hypothesis assumes a demand-driven change in the labour market (which in turn results from exogenously given technological change). Corresponding to such change should then be an increase in both skill premium and relative supply of skills, as was empirically documented in the case of the US \citep{acemoglu2011skills}. The two key variables of this model are therefore positively correlated. 
+The original Skill-biased Technological change hypothesis assumes a demand-driven change in the labour market (which in turn results from exogenously given technological change). Corresponding to such change should then be an increase in both skill premium and relative supply of skills, as was empirically documented in the case of the US \citep{acemoglu2011skills}. The two key variables of this model are therefore positively correlated. 
 
 % NOTE with reference to Fig.3: it may not be obvious at first sight but the inner product quite match fluctuations in Fig.10 and Fig.11 (If you imagine taking mean in each periods and check correlation of the changes between periods). Also the time series are not fully equivalent (e.g. we ignore the Secondary/Tertiary distinction in Fig.3), so they may differ sometimes.
 The data for CEEC presented in Figures \ref{agg_high_low_log_wage_gap} and \ref{agg_labour_supplies} showing university wage premium and relative supply by year. The Figures complement analysis in Table \ref{inner_products_ls_w} and suggest a prevailing negative correlation over the 2007-2019 period between the skill premium and the relative skill supply. However, closer examination of relationship between the two series suggest significant fluctuations leading to temporary reversals in the relationship, consistently with the developments presented in Table \ref{inner_products_ls_w}.  % see Katz and Murphy - detrended / KM 92 - inner products in the ntbs
@@ -600,7 +601,7 @@ Nevertheless, note that the model has a relatively poor fit compared to the resu
 %Overall, we can identify a marked difference of the observed basic labour market patterns in the CEE compared to US and German evidence (and we can probably say Western experience in general) that to bigger or lesser degree experienced job and wage polarizations. We do not confirm such a phenomenon in the CEE and rather see strengthening of the middle and bottom part of the distribution compared to the highest quantiles.
 
 \section{Conclusion}
-We investigate CEE labour markets during almost the entire period of the countries' EU membership using EU-SILC micro survey data to check key labour market hypotheses found in developed economies, namely the Skill Bias technological change (SBTC) and its newer Routine Bias variant (RBTC). The former is represented by the Canonical model by \citet{katz1992changes}, the latter by the job and wage polarization that represent a key finding of the literature, leading to the formulation of the RBTC.
+We investigate CEE labour markets during almost the entire period of the countries' EU membership using EU-SILC micro survey data to check key labour market hypotheses found in developed economies, namely the Skill-biased technological change (SBTC) and its newer Routine-biased variant (RBTC). The former is represented by the Canonical model by \citet{katz1992changes}, the latter by the job and wage polarization that represent a key finding of the literature, leading to the formulation of the RBTC.
 
 Moreover, we attempt to complement the literature on labour market inequality in the set of countries closely linked to the developed economies for which the inequality is usually measured but at the same time having a very different position in the labour market chains. We find the EU-SILC a good option for emulating the key STBC literature such as Katz and Murphy (1992) in the CEE context and, at the same time, relatively little used dataset in the context of inequality estimation.
 
