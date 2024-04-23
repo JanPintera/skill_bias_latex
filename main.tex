@@ -3,8 +3,8 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{caption}
-\captionsetup[figure]{font=small,labelfont=small, width=.8\linewidth} %\footnotesize
-\captionsetup[table]{font=small,labelfont=small}
+\captionsetup[figure]{font=small,labelfont=small, width=.8\linewidth, name=Fig., labelfont=bf} %\footnotesize
+\captionsetup[table]{font=small,labelfont=small, labelfont=bf}
 %\usepackage[a4paper, total={170mm,257mm}, left=20mm,top=20mm]{geometry}
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 \usepackage{placeins}
@@ -45,7 +45,7 @@
     \begin{large}Jan Pintera\end{large} \\\vspace{5mm} \begin{small} Institute of Economic Studies, Faculty of Social Sciences, Charles University,\\ Prague, Czech Republic\\
     Email (corresponding author): jan.pintera@fsv.cuni.cz \end{small}
 }
-\date{September 2023}
+\date{April 2024}
 \def \jel {	J30, J31, O14, O31, O33}
 \def \Keywords {Labor Markets, Technological Change, Polarization, Skills}
 
@@ -65,9 +65,12 @@ high skill labour are higher than often found in other countries. These results 
 \textbf{Keywords:}  \Keywords
 
 \bigskip
+\textbf{Statements and Declarations:}
+This work was supported by the Grant Agency of the Czech Republic, Grant No. GACR no. 20-14990S.
+\\
+
 \textbf{Acknowledgements:}
-This work was supported by the Grant Agency of the Czech Republic, Grant No. GACR no. 20-14990S. We thank Bernd Fitzenberger for his helpful
-comments and suggestions.
+We thank Bernd Fitzenberger for his helpful comments and suggestions.
 
 \end{abstract}
 \clearpage
@@ -78,7 +81,13 @@ comments and suggestions.
 \section{Introduction}
 The echoes of labour market turmoil in developed economies have been heard quite often in recent decades. Fears of unemployment, job-quality deterioration, or, more specifically, the "hollowing-out" of the entire middle class appear in the latest government reports \citetext{e.g., \citealt{rodrik2020economic}} and can be documented in the declining relative position of the western middle class in the world income distribution \citep{milanovic2020elephant}. These fears are often associated with rising populism and declining trust in democratic institutions.
 
-% Addition - probably merge it with the paragraph below + bring more directly the Orenstein quotes from the Conclusion
+%%%%%%%%%%%%%%%%%%%%%NEW - START
+There are two primary interpretations of the Western malaise that have emerged in the literature. The first interpretation focuses on the impact of international trade, as exemplified by the work of Autor and Dorn (2013). The second interpretation concentrates on the impact of technological change, viewed through the lens of relative demand shifts for labor. 
+
+The situation on the EU's Eastern flank presents both similarities and differences compared to the Western scenario. While these countries are gradually converging structurally with the West, they played a distinct role in the globalization push after 1990. The integration of Central and Eastern Europe (CEE) had an impact on the West comparable to that of China, as demonstrated by Dauth et al. (2013). On the other hand, the region's reliance on labor cost advantages may place it in a unique position regarding vulnerability to automation. Furthermore, the region as a whole is somewhat underperforming in terms of innovation, as evidenced by its subpar ranking on the Regional Innovation Scorecard (RIS)."
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% NEW - END
+
 In this paper, we focus on labour market dynamics in Central and Eastern Europe (CEE). We use the individual-level data from the EU-SILC database to examine the evolution of wage inequality, wage polarisation, and the elasticity of substitution between low and high skill labour. Unlike their Western counterparts, the CEE countries have shown signs of declining wage inequality over the last decade \citep{magda2021firms}, often accompanied by low unemployment and overheating labour market. To investigate the labour market dynamics and better understand these contrasting developments, micro-data from Eurostat (EU-SILC) were used to examine the labour market developments in greater detail.
 
 In addition, there are at least two conflicting phenomena present in the CEE that are likely to produce outcomes different from those of developed economies. First, there is an educational upgrading happening in the region \citep{hardy2018educational}, suggesting significant structural change toward a knowledge-based economy. These developments contrast with US economy which is experiencing an educational slowdown \citep{goldin2010race}.
@@ -86,20 +95,29 @@ In addition, there are at least two conflicting phenomena present in the CEE tha
 Second, the CEE countries, for their favourable unit labour cost and skilled workforce, seem to be ideal recipients of offshoring from high-wage economies. They also play a rather different role in the global value chains than developed countries \citep{baldwin2015supply}. The CEECs are typical examples of the "Factory Economies" strongly linked to their headquarter economy, Germany. 
 A different position in the global value chains may also imply a different impact of global technological change than in the developed world, where the routine-intensive occupations decline can be linked to offshoring \citep{acemoglu2012does}.
 
+
 Despite these dissimilarities, a populist drive comparable to the developed countries in the West can be seen in the new EU member states, with the populist parties' vote share tripling between 2000 and 2017. The agenda of these parties also bear similarities to the populists in the old EU countries \citep{orenstein2022work}. In Western countries, this rise of populist movement is often linked to the effects of globalisation and labour market polarisation. Given different labour market dynamics, the CEE countries provide an interesting case for understanding the link between income inequality and populism. 
 
 
 
 From a methodological perspective, this work builds on the Skill-Bias Technological change hypothesis \citep{katz1992changes} that is based on the interplay of supply and demand for skill. The latter is driven by technological change, and the former by investment in human capital. This work will concentrate on potential causes of labour market inequality outlined by the Skill-biased Technological Change (STBC) hypothesis that despite its early origin \citep{katz1992changes} and empirical critiques seem to endure to these days \citep{aziz2021between, goldin2020extending}.
 
+
 Further refinement of the SBTC hypothesis postulates job and wage polarization, phenomena seen in the US and other developed economies \citep{rodrik2020economic, temin2018vanishing}. Using the EU-SILC survey microlevel data from 2005 to 2019, this work brings descriptive and regression analysis of labour market polarization and other key labour market trends in the context of Central and Eastern Europe.
+
 
 To anticipate our results, we found that many of the phenomena identified in developed economies are not confirmed in the case of Central Europe. The general conclusion reached by our study is a good performance of the lower parts of the wage distribution. Perhaps most notably, we see a relative decline of the ninth decile in wages relative to median and mostly flat or monotonic behaviour of relative employment. This result contrasts with the characteristic U-shaped behaviour documented by \citet{acemoglu2012does} and interpreted as the job and wage polarization. %We however also discover heterogeneity between the CEE countries.
 %This seems to be in line with the view of the new member states as open economies with low unit labour costs which in environment of globalization leads to an inflow on relatively routine-intensive jobs, which drives demand for the low and middle type of jobs and has generally equalizing effect on the labour market.
 
 We further investigated the elasticity of substitution between high and low skill labour, which is one of the key features of the STBC framework \citep{katz1992changes}. One of the motivations for this approach was the significant skill upgrade seen in the region, a phenomenon visible in the US several decades earlier when the framework was found to perform well \citep{hardy2018educational}.
 
-Our main contribution to the literature is that we bring a direct application of the skill-biased framework for all the CEE countries instead of testing a particular subsection of the theory (routine-biased technological change as in the case of \citet{arendt2019technical} or \citet{hardy2018educational}) or concentrating on a single country. We also use a different source of data (EU-SILC) that provides annual data for all countries of interest. EU-SILC is, due to its annual form and coverage of labour supply, in our view, the best fit for the surveys used in the US studies, such as the Current Population Survey used in \citet{katz1992changes}. 
+%%%%%%%%%%%%%%%%%%%%%NEW - START
+
+We aim to complement previous research on wage inequality in the CEE region by focusing on the relative demand for high-low skill labor and technological change, which forms the core of the SBTC hypothesis. Our contribution lies in bringing a systematic study of the SBTC hypothesis to the relatively understudied CEE region. While existing literature on the SBTC in the region, such as \citet{tyrowicz2019wage}, concentrates on the countries' behavior during the economic transition or elaborates on routine-based task theories, we intend to study the Canonical model proposed by \citet{katz1992changes} during the pre-COVID EU experience of these countries. This will be done in two steps: descriptive analysis of the wage premia and examination of the model itself. We believe that the SBTC model is appropriate for this goal as it allows us to comment on key features of these economies, such as wage dispersion, education system performance, and the level of technological development.
+
+Our main contribution to the literature is the direct application of the skill-biased framework to all CEE countries, instead of testing a particular subsection of the theory (such as routine-biased technological change, as in the case of \citet{arendt2019technical} or \citet{hardy2018educational}) or concentrating on a single country. Additionally, we utilize a different source of data, EU-SILC, which provides annual data for all countries of interest. We argue that EU-SILC, due to its annual form and coverage of labor supply, is the best fit for our purposes, similar to surveys used in US studies such as the Current Population Survey used by \citet{katz1992changes}.
+%%%%%%%%%%%%%%%%%%%%%NEW - END
+
 
 The paper is organized as follows. The first part reviews the labour market development in the CEE, US and Germany. The second part discusses descriptive evidence on the CEE labour market, including evidence on polarization. The third part introduces the Skill Bias framework and outlines the details of the Canonical model. This part also presents the elasticity of substitution estimates and discusses the construction of variables necessary to obtain them. The fourth section concludes.
 
@@ -126,13 +144,10 @@ With newly available micro-data, there have been several attempts to investigate
 
 The results of both Hardy et al. (2018) and Arendt and Grabowski (2019) point toward certain deviations of this region from the rest of Europe in terms of the task distribution. Namely, according to Hardy et al. (2018) we see an increase in routine cognitive tasks in CEE countries, which is contrary to both the old EU countries and routine-replacing technological change hypothesis, similarly Arendt and Grabowski (2019) find relative wages in routine manual jobs in Poland too high for the RBTC hypothesis to hold. Both studies then note significant educational upgrading in the region, especially the rapidly increasing tertiary education attainment (Hardy et al., 2018). We should note that at least in this aspect the CEE countries seem to differ significantly from the U.S. labour market, where as noted by \citet{acemoglu2012does}, high-school attainment is actually stagnant since the 1960s and post-secondary attainment decelerated already in the 1970s. The specificity of the CEE income inequality with respect to the West is also confirmed by \citet{magda2021firms} - who notes the decrease of wage inequality in the CEE in the 2002-2014 period. Before this period, the CEE countries experienced significant inequality rise due to their economic transformation, but the inequality leveled since then \citep{tyrowicz2019wage} with evidence of wage inequality staying lower than in the developed countries \citep{mysikova2018personal}. This conclusion is also confirmed by a recent study by Magda et al. (2021), who find generally decreasing levels of wage inequality in the CEE using the EU-SES database for 2002-2014, with the only country with a slight increase in wage inequality being the Czech Republic. The authors note that this finding stands in contrast to the development found in Western countries. From our point of view, this speaks in favour of analyzing the validity of the skill-bias hypothesis in this region.
 
-We should also note that the CEE region has specific characteristics compared to Western Europe. Above all, thanks to their comparative advantage in labour costs, the CEE countries have a different position in the globalization process than countries of Western Europe. At the same time, giving a closer look at the relationship between the West and the CEE region gives us an even more fascinating picture with the CEE serving as a pool of relatively cheap and qualified labour to Germany, strongly influencing Germany's internal labour market in return \citep{marin2004nation, marin2018global}. Therefore, we provide a brief description of the German labour market below, as it is the most deeply connected neighbouring country \citep{baldwin2015supply}.
-
-Similarly to the US and other Western economies, the German labour market shows rising income inequality at least since the 1980s \citep{biewen2017rising}. However, \citet{biewen2021labour} find that inequality has been stagnating since 2005 and attribute this phenomenon to recent labour market boom. \citet{bossler2020wage} concentrating on the lower tail of the distribution find a rising wage inequality in 2000s and declining trend after 2010s; furthermore, they observe a sharp drop in inequality after 2014, that they attribute to minimum wage introduction.
-Giving a closer look at the development of inequality in different parts of the income distribution, \citet{biewen2019unions} do not confirm wage polarization found in the US. They find a much more monotonic development with the highest percentiles gaining relatively the most.
-In terms of the SBTC, \citet{biewen2017rising} find strong influence of composition changes in explaining rising inequality - education (especially in the upper part of the distribution) and changes in recent labor market histories (lower part) and conclude that this finding is in line with SBTC hypothesis.
-
-Last but not least, \citet{glitz2021skill} shows that after breaking German the population to three education levels and two age groups and using the procedure developed by \citet{katz1992changes} and \citet{card2001can}, they find that the labour supplies are to large extent able to explain the changes in skill premium in Germany. They find especially pronounced rise in skill premium of medium skilled to low skilled and link it to decline in the share of population with vocational training. Their findings are therefore very much in line with the original SBTC framework and can be seen as reaching a similar result as the seminal work of \citet{goldin2010race}.
+We should also note that the CEE region has specific characteristics compared to Western Europe. Above all, thanks to their comparative advantage in labour costs, the CEE countries have a different position in the globalization process than countries of Western Europe. At the same time, giving a closer look at the relationship between the West and the CEE region gives us an even more fascinating picture with the CEE serving as a pool of relatively cheap and qualified labour to Germany, strongly influencing Germany's internal labour market in return 
+\citep{marin2004nation, marin2018global}. 
+%%%%%%%%%%% NEW - Start
+Notably, \citet{glitz2021skill} has shown that after breaking German the population to three education levels and two age groups and using the procedure developed by \citet{katz1992changes} and \citet{card2001can}, they find that the labour supplies are to large extent able to explain the changes in skill premium in Germany. They find especially pronounced rise in skill premium of medium skilled to low skilled and link it to decline in the share of population with vocational training. Their findings are therefore very much in line with the original SBTC framework and can be seen as reaching a similar result as the seminal work of \citet{goldin2010race}.
 
 
 
@@ -158,6 +173,9 @@ Last but not least, \citet{glitz2021skill} shows that after breaking German the 
 \section{Trends in Wage and Employment Development}
 \subsection{Labour Market Polarization?}\label{wage_analysis}
 To analyse trends in labour market developments, we rely on the Eurostat EU-SILC database with data also from the CEE countries (Czech Republic, Slovakia, Poland, Hungary, Latvia, Estonia, Lithuania, Romania, and Bulgaria) between 2005 and 2019. The EU-SILC collects information about income, poverty, social exclusion and living conditions across the EU countries. Our dataset contains more than 2 million observations in total.
+%%%%%% NEW - START: 
+Compared to other potential data sources, such as the EU-SES survey, we selected SILC because it provides both income and wage data of sufficient quality, as well as information on the amount of labor performed, which are necessary for the estimation of the SBTC model. 
+%%%%%%% NEW - END
 
 For presentation purposes, we aggregated the countries into three regional blocks, the Central Europe (the "Visegrad" countries), the Baltics (Latvia, Estonia and Lithuania) and two Balkan countries, Romania and Bulgaria. This division was inspired by the geographical and socioeconomic proximity of the countries.\footnote{We add Slovenia to the Central European countries, as its macroeconomic performance is much closer to them than Romania and Bulgaria.} The results below refer to these regional blocks, results for individual countries are presented in the Appendix.\footnote{Note that we calculate the aggregated metrics by pooling all observations in a region together and then treating it as a single territory, i.e. the statistics below are not averages of individual countries' statistics in the Appendix.} We choose 2011-2019 as our main period of interest due to data limitations (data for Bulgaria and Romania and various variable changes) and also in order to concentrate on the period after the Great Recession.
 
@@ -1043,5 +1061,63 @@ Country &  Relat. Supply &   P-value &    $t$-statistic &  $R^{2}$ \\
 \end{table}
 
 
+
+\begin{table}[!htbp]
+\centering 
+\caption{Basic Income Statistics (logs)}
+\resizebox{\textwidth}{!}{
+
+\begin{tabular}{llrrrrrr}
+\toprule
+     &          &    count &      mean &       std &       25\% &       50\% &       75\% \\
+Year & country group &          &           &           &           &           &           \\
+\midrule
+2005 & Baltics &   7936.0 &  5.759445 &  0.696044 &  5.342908 &  5.759542 &  6.149943 \\
+     & Visegrad &  32713.0 &  6.147041 &  0.845683 &  5.659424 &  6.096721 &  6.645361 \\
+2006 & Baltics &   9882.0 &  5.902042 &  0.706217 &  5.491138 &  5.898741 &  6.307205 \\
+     & Visegrad &  39671.0 &  6.271106 &  0.975203 &  5.824943 &  6.288126 &  6.786192 \\
+2007 & Balkan &   7136.0 &  5.291471 &  0.682239 &  4.928569 &  5.295346 &  5.645978 \\
+     & Baltics &  14030.0 &  6.034773 &  0.706098 &  5.627518 &  6.051653 &  6.440065 \\
+     & Visegrad &  42221.0 &  6.326558 &  0.956770 &  5.906392 &  6.342669 &  6.811998 \\
+2008 & Balkan &   9087.0 &  5.519398 &  0.738633 &  5.192519 &  5.543809 &  5.893378 \\
+     & Baltics &  14025.0 &  6.261341 &  0.709582 &  5.860931 &  6.287629 &  6.671028 \\
+     & Visegrad &  44834.0 &  6.439026 &  0.948994 &  6.073611 &  6.474315 &  6.899268 \\
+2009 & Balkan &  10225.0 &  5.690156 &  0.581562 &  5.341389 &  5.663007 &  6.013813 \\
+     & Baltics &  13698.0 &  6.388316 &  0.762803 &  5.966948 &  6.397537 &  6.819962 \\
+     & Visegrad &  43023.0 &  6.636470 &  0.694342 &  6.222516 &  6.616336 &  7.038087 \\
+2010 & Balkan &  10427.0 &  5.648773 &  0.539679 &  5.320666 &  5.620769 &  5.955757 \\
+     & Baltic &  12909.0 &  6.253656 &  0.929514 &  5.859363 &  6.298158 &  6.735506 \\
+     & Visegrad &  41529.0 &  6.590091 &  0.720055 &  6.155336 &  6.570671 &  6.997807 \\
+2011 & Balkan &  10444.0 &  5.644617 &  0.545742 &  5.327945 &  5.629986 &  5.933982 \\
+     & Baltic &  13250.0 &  6.225751 &  0.927470 &  5.834358 &  6.289585 &  6.708138 \\
+     & Visegrad &  41596.0 &  6.624427 &  0.766990 &  6.214608 &  6.619581 &  7.036221 \\
+2012 & Balkan &   9238.0 &  5.661872 &  0.603479 &  5.375911 &  5.649155 &  5.966160 \\
+     & Baltics &  13696.0 &  6.339866 &  0.831622 &  5.930934 &  6.366572 &  6.778997 \\
+     & Visegrad &  41243.0 &  6.676594 &  0.679284 &  6.249765 &  6.661117 &  7.070795 \\
+2013 & Balkan &   8827.0 &  5.707954 &  0.546572 &  5.423569 &  5.671162 &  6.000966 \\
+     & Baltics &  13626.0 &  6.425308 &  0.734069 &  6.005043 &  6.427104 &  6.825060 \\
+     & Visegrad &  39109.0 &  6.666303 &  0.705582 &  6.239572 &  6.634091 &  7.058328 \\
+2014 & Balkan &   8689.0 &  5.714072 &  0.677240 &  5.453236 &  5.709093 &  6.047055 \\
+     & Baltics &  13586.0 &  6.372905 &  1.101866 &  6.018816 &  6.472928 &  6.891700 \\
+     & Visegrad &  38241.0 &  6.684074 &  0.689644 &  6.242752 &  6.659294 &  7.082704 \\
+2015 & Balkan &   8865.0 &  5.801071 &  0.606776 &  5.516046 &  5.757518 &  6.085880 \\
+     & Baltics &  13357.0 &  6.525265 &  0.803623 &  6.110615 &  6.545443 &  6.968127 \\
+     & Visegrad &  35515.0 &  6.680442 &  0.757410 &  6.291835 &  6.675150 &  7.087295 \\
+2016 & Balkan &  10769.0 &  5.770345 &  0.795354 &  5.511512 &  5.795422 &  6.141636 \\
+     & Baltics &  13751.0 &  6.590793 &  0.803911 &  6.185563 &  6.605682 &  7.029500 \\
+     & Visegrad &  35814.0 &  6.704685 &  0.766409 &  6.309918 &  6.697632 &  7.114769 \\
+2017 & Balkan &  11022.0 &  5.944106 &  0.650830 &  5.647826 &  5.956890 &  6.262375 \\
+     & Baltics &  13778.0 &  6.619615 &  0.819248 &  6.230487 &  6.658713 &  7.060399 \\
+     & Visegrad &  36637.0 &  6.724185 &  0.851435 &  6.352773 &  6.737042 &  7.151355 \\
+2018 & Balkan &  11075.0 &  6.042281 &  0.682581 &  5.753798 &  6.072441 &  6.399620 \\
+     & Baltics &  13608.0 &  6.733360 &  0.808707 &  6.355025 &  6.756988 &  7.159984 \\
+     & Visegrad &  36745.0 &  6.820573 &  0.690773 &  6.440738 &  6.829794 &  7.202289 \\
+2019 & Balkan &  11162.0 &  6.309858 &  0.715430 &  6.010924 &  6.349876 &  6.703679 \\
+     & Baltics &  13382.0 &  6.799291 &  0.817138 &  6.408943 &  6.831326 &  7.233602 \\
+     & Visegrad &  38069.0 &  6.890765 &  0.727646 &  6.533108 &  6.903078 &  7.281287 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
 
 \end{document}
